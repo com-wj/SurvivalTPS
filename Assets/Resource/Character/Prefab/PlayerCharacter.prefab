@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rotateRootTr: {fileID: 6232374368336947935}
   _sensitivity: 2
+  _startPitch: 0
   _minPitch: -30
   _maxPitch: 45
 --- !u!1 &4177669997710880911
@@ -124,9 +125,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _controller: {fileID: 4823215402435021120}
   _playerAnimator: {fileID: 4985903341929718339}
-  _walkSpeed: 5
+  _walkSpeed: 4
   _runKey: 304
-  _runMultiplier: 1.8
+  _runMultiplier: 1.5
   _jumpKey: 32
   _jumpHeight: 1.2
   _gravity: -9.81
@@ -144,10 +145,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 550819369601387602}
-  _paramMoveX: MoveX
-  _paramMoveY: MoveY
+  _paramMoveX: fMoveX
+  _paramMoveY: fMoveY
   _paramJump: tJump
+  _paramVerticalVel: fVerticalVel
+  _paramIsGrounded: bGrounded
   _paramAim: bAim
+  _paramFire: tFire
+  _tagHardLanding: HardLanding
   _speedDamp: 0.12
 --- !u!1 &4593782714719857102
 GameObject:
