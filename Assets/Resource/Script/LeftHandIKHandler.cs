@@ -9,8 +9,8 @@ public class LeftHandIKHandler : MonoBehaviour
 
 	private void Awake()
 	{
-		if (_animator != null ||
-			_gun != null)
+		if (_animator == null ||
+			_gun == null)
 		{
 			Debug.LogWarning($"[{name}] 인스펙터 null 감지");
 			gameObject.SetActive(false);

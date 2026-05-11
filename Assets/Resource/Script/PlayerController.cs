@@ -75,20 +75,22 @@ public class PlayerController : MonoBehaviour
 		Vector3 input = new Vector3(h, 0, v);
 		input = Vector3.ClampMagnitude(input, 1.0f);
 
-		bool isRunning = Input.GetKey(_runKey);
+		bool isSideMove = (h != 0) && (v == 0);
+
+		bool isRunning = Input.GetKey(_runKey) && v > 0 && !isSideMove;
 		bool isjumpKeyDown = Input.GetKeyDown(_jumpKey);
 		bool isAiming = ForceAiming || Input.GetMouseButton(1);
 
 		bool isLanding = _playerAnimator.IsLanding();
-		float landingPenalty = isLanding ? 0f : 1f;
-
-		float speed = (isRunning && !isAiming) ? (_walkSpeed * _runMultiplier) : _walkSpeed;
-		speed *= landingPenalty;
 
 		if (_controller.isGrounded)
 		{
 			// 이동속도 계산
 			Vector3 moveDir = (input.sqrMagnitude > 0.0001f) ? BuildMoveDirection(input) : Vector3.zero;
+
+			float speed = (isRunning && !isAiming) ? (_walkSpeed * _runMultiplier) : _walkSpeed;
+			speed *= isLanding ? 0f : 1f;
+			speed *= isSideMove ? 0.5f : 1f;
 
 			_horizontalVel = moveDir * speed;
 
@@ -99,6 +101,7 @@ public class PlayerController : MonoBehaviour
 		}
 
 		Vector3 _finalVelocity = _horizontalVel;
+		Debug.Log($"[{name}] {_finalVelocity}");
 		_finalVelocity.y = _verticalVel; // 중력 적용
 
 		_controller.Move(_finalVelocity * Time.deltaTime);
