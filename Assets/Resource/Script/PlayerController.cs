@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
 
 	[Header("조준")]
 
+	[Header("디버그")]
+	[SerializeField] bool ForceAiming;
 	#endregion
 
 	#region 내부 변수
@@ -69,13 +71,13 @@ public class PlayerController : MonoBehaviour
 		// 입력
 		float h = Input.GetAxisRaw("Horizontal");
 		float v = Input.GetAxisRaw("Vertical");
-		
+
 		Vector3 input = new Vector3(h, 0, v);
 		input = Vector3.ClampMagnitude(input, 1.0f);
 
 		bool isRunning = Input.GetKey(_runKey);
 		bool isjumpKeyDown = Input.GetKeyDown(_jumpKey);
-		bool isAiming = Input.GetMouseButton(1);
+		bool isAiming = ForceAiming || Input.GetMouseButton(1);
 
 		bool isLanding = _playerAnimator.IsLanding();
 		float landingPenalty = isLanding ? 0f : 1f;

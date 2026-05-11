@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerAnimator : MonoBehaviour
@@ -25,6 +24,16 @@ public class PlayerAnimator : MonoBehaviour
 
 	[Header("애니메이터 튜닝")]
 	[SerializeField] private float _speedDamp = 0.12f;
+
+	/*
+	[Header("Head Look Settings")]
+	[Range(0, 1)] public float overallLookAtWeight = 1.0f;
+	[Range(0, 1)] public float bodyLookAtWeight = 0.15f;
+	[Range(0, 1)] public float headLookAtWeight = 0.8f;
+	[Range(0, 1)] public float eyesLookAtWeight = 1.0f;
+	[Range(0, 1)] public float clampLookAtWeight = 0.5f;
+	public float lookAtTargetDistance = 10f;
+	*/
 	#endregion
 
 	#region 내부 변수
@@ -41,6 +50,8 @@ public class PlayerAnimator : MonoBehaviour
 
 	private bool _hasJumpParam;
 	private bool _hasAimParam;
+
+	//private Transform maincamera;
 	#endregion
 
 	private void Awake()
@@ -75,6 +86,7 @@ public class PlayerAnimator : MonoBehaviour
 			_hashAim = Animator.StringToHash(_paramAim);
 			_hashFire = Animator.StringToHash(_paramFire);
 		}
+		//maincamera = Camera.main.transform;
 	}
 
 	public void OnMove(float moveX, float moveY)
@@ -120,4 +132,21 @@ public class PlayerAnimator : MonoBehaviour
 	{
 		return _animator.GetCurrentAnimatorStateInfo(0).tagHash == _hashHardLand;
 	}
+
+	/*
+	void OnAnimatorIK(int layerIndex)
+	{
+		if (_animator == null || maincamera == null)
+		{
+			return;
+		}
+
+		if (layerIndex == 0)
+		{
+			_animator.SetLookAtWeight(overallLookAtWeight, bodyLookAtWeight, headLookAtWeight, eyesLookAtWeight, clampLookAtWeight);
+			Vector3 lookAtTargetPosition = maincamera.position + maincamera.forward * lookAtTargetDistance;
+			_animator.SetLookAtPosition(lookAtTargetPosition);
+		}
+	}
+	*/
 }

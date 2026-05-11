@@ -7,6 +7,7 @@ public class CameraController : MonoBehaviour
 	[SerializeField] private float _sensitivity = 2.0f;
 
 	[SerializeField] private float _startPitch = 0f;
+	[SerializeField] private float _startYaw = -20f;
 	[SerializeField] private float _minPitch = -30f;
 	[SerializeField] private float _maxPitch = 45f;
 
@@ -14,10 +15,10 @@ public class CameraController : MonoBehaviour
 
 	private void Awake()
 	{
-		Cursor.visible = false;
-		Cursor.lockState = CursorLockMode.Locked;
+		//Cursor.visible = false;
+		//Cursor.lockState = CursorLockMode.Locked;
 
-		transform.localRotation = Quaternion.Euler(_startPitch, 0, 0);
+		transform.localRotation = Quaternion.Euler(_startPitch, _startYaw, 0);
 	}
 
 
@@ -32,6 +33,6 @@ public class CameraController : MonoBehaviour
 		// 수직 회전
 		_xRotation -= my;
 		_xRotation = Mathf.Clamp(_xRotation, _minPitch, _maxPitch);
-		transform.localRotation = Quaternion.Euler(_xRotation, 0, 0);
+		transform.localRotation = Quaternion.Euler(_xRotation, _startYaw, 0);
 	}
 }
