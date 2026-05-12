@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
 
 	[Header("이동 속도")]
 	[SerializeField] private float _walkSpeed = 5.0f;
+	[SerializeField] private float _landingMoveSpeedMultiplier = 0f;
+	[SerializeField] private float _aimingMoveSpeedMultiplier = 0.5f;
+	[SerializeField] private float _sideMoveSpeedMultiplier = 0.5f;
 
 	[Header("달리기")]
 	[SerializeField] KeyCode _runKey = KeyCode.LeftShift;
@@ -77,9 +80,15 @@ public class PlayerController : MonoBehaviour
 
 		bool isSideMove = (h != 0) && (v == 0);
 
-		bool isRunning = Input.GetKey(_runKey) && v > 0 && !isSideMove;
-		bool isjumpKeyDown = Input.GetKeyDown(_jumpKey);
 		bool isAiming = ForceAiming || Input.GetMouseButton(1);
+		bool isRunning = 
+			(
+			Input.GetKey(_runKey) &&
+			!isAiming &&
+			v > 0 &&
+			!isSideMove
+			);
+		bool isjumpKeyDown = Input.GetKeyDown(_jumpKey);
 
 		bool isLanding = _playerAnimator.IsLanding();
 
@@ -88,9 +97,11 @@ public class PlayerController : MonoBehaviour
 			// 이동속도 계산
 			Vector3 moveDir = (input.sqrMagnitude > 0.0001f) ? BuildMoveDirection(input) : Vector3.zero;
 
-			float speed = (isRunning && !isAiming) ? (_walkSpeed * _runMultiplier) : _walkSpeed;
-			speed *= isLanding ? 0f : 1f;
-			speed *= isSideMove ? 0.5f : 1f;
+			float speed = _walkSpeed;
+			speed *= isLanding ? _landingMoveSpeedMultiplier : 1f;
+			speed *= isRunning ? _runMultiplier : 1f;
+			speed *= isAiming ? _aimingMoveSpeedMultiplier : 1f;
+			speed *= isSideMove ? _sideMoveSpeedMultiplier : 1f;
 
 			_horizontalVel = moveDir * speed;
 
@@ -101,7 +112,6 @@ public class PlayerController : MonoBehaviour
 		}
 
 		Vector3 _finalVelocity = _horizontalVel;
-		Debug.Log($"[{name}] {_finalVelocity}");
 		_finalVelocity.y = _verticalVel; // 중력 적용
 
 		_controller.Move(_finalVelocity * Time.deltaTime);
