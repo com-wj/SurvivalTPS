@@ -30,14 +30,14 @@ public class LeftHandIKHandler : MonoBehaviour
 		// 왼손 마운트
 		if (_gun == null) return;
 
-		Transform leftHandTr = _gun.LeftHandMount;
+		Transform targetTr = _gun.LeftHandMount;
 
-		if(leftHandTr == null) return;
+		if(targetTr == null) return;
 
 		_animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1.0f);
 		_animator.SetIKRotationWeight(AvatarIKGoal.LeftHand, 1.0f);
 
-		_animator.SetIKPosition(AvatarIKGoal.LeftHand, leftHandTr.position);
-		_animator.SetIKRotation(AvatarIKGoal.LeftHand, leftHandTr.rotation);
+		_animator.SetIKPosition(AvatarIKGoal.LeftHand, targetTr.position);
+		_animator.SetIKRotation(AvatarIKGoal.LeftHand, targetTr.rotation);
 	}
 }

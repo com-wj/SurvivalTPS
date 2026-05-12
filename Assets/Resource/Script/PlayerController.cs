@@ -5,6 +5,12 @@ public class PlayerController : MonoBehaviour
 	#region 인스펙터
 	[SerializeField] private CharacterController _controller;
 	[SerializeField] private PlayerAnimator _playerAnimator; // cs
+	[SerializeField] private PlayerShooter _playerShooter; // cs
+
+	[Header("캐릭터 회전")]
+	[SerializeField] private CameraController _cameraController; // cs
+	[SerializeField] private Transform _characterMeshTr;
+	[SerializeField] private Vector3 _rotateOffset;
 
 	[Header("이동 속도")]
 	[SerializeField] private float _walkSpeed = 5.0f;
@@ -23,9 +29,10 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private float _groundStick = -2.0f;
 
 	[Header("조준")]
+	[SerializeField] private bool _isAiming = false;
 
 	[Header("디버그")]
-	[SerializeField] bool ForceAiming;
+	[SerializeField] private bool _forceAiming;
 	#endregion
 
 	#region 내부 변수
@@ -35,10 +42,14 @@ public class PlayerController : MonoBehaviour
 	private float _verticalVel; // 수직 속도(y)
 	#endregion
 
+	public bool IsAiming => _isAiming;
+
 	private void Awake()
 	{
 		if (_controller == null ||
-			_playerAnimator == null)
+			_playerAnimator == null ||
+			_playerShooter == null ||
+			_characterMeshTr == null)
 		{
 			Debug.LogWarning($"[{name}] 인스펙터 null");
 			gameObject.SetActive(false);
@@ -80,11 +91,11 @@ public class PlayerController : MonoBehaviour
 
 		bool isSideMove = (h != 0) && (v == 0);
 
-		bool isAiming = ForceAiming || Input.GetMouseButton(1);
+		_isAiming = _forceAiming || Input.GetMouseButton(1);
 		bool isRunning = 
 			(
 			Input.GetKey(_runKey) &&
-			!isAiming &&
+			!_isAiming &&
 			v > 0 &&
 			!isSideMove
 			);
@@ -100,7 +111,7 @@ public class PlayerController : MonoBehaviour
 			float speed = _walkSpeed;
 			speed *= isLanding ? _landingMoveSpeedMultiplier : 1f;
 			speed *= isRunning ? _runMultiplier : 1f;
-			speed *= isAiming ? _aimingMoveSpeedMultiplier : 1f;
+			speed *= _isAiming ? _aimingMoveSpeedMultiplier : 1f;
 			speed *= isSideMove ? _sideMoveSpeedMultiplier : 1f;
 
 			_horizontalVel = moveDir * speed;
@@ -117,19 +128,22 @@ public class PlayerController : MonoBehaviour
 		_controller.Move(_finalVelocity * Time.deltaTime);
 
 		// 파라미터 적용
-		h *= !isAiming && isRunning ? 2f : 1f;
-		v *= !isAiming && isRunning ? 2f : 1f;
+		h *= !_isAiming && isRunning ? 2f : 1f;
+		v *= !_isAiming && isRunning ? 2f : 1f;
 		_playerAnimator.OnMove(h, v);
 		_playerAnimator.UpdateAirParam(_controller.isGrounded, _verticalVel);
 
-		_playerAnimator.OnAim(isAiming);
-		if (isAiming)
+		_playerAnimator.OnAim(_isAiming);
+		if (_isAiming)
 		{
 			if (Input.GetMouseButton(0))
 			{
 				_playerAnimator.OnFire();
+				_playerShooter.TryShoot();
 			}
 		}
+
+		RotateCharacter();
 	}
 	
 	// 이동 방향 설정
@@ -150,6 +164,24 @@ public class PlayerController : MonoBehaviour
 			_verticalVel = Mathf.Sqrt(_jumpHeight * -2.0f * _gravity);
 
 			_playerAnimator.OnJump();
+		}
+	}
+
+	private void RotateCharacter()
+	{
+		if (_cameraController == null) return;
+		if (_characterMeshTr == null) return;
+
+		bool isMoving = (_horizontalVel.sqrMagnitude > 0.0001f); // 이동 중
+
+		if (_isAiming || isMoving)
+		{
+			float targetYaw = _cameraController.CurrentYaw;
+			Vector3 targetRot = new Vector3(0, targetYaw, 0)
+				//+ _rotateOffset
+				;
+
+			_characterMeshTr.localRotation = Quaternion.Euler(targetRot);
 		}
 	}
 }
