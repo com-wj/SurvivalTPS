@@ -3,9 +3,6 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
 	#region 인스펙터
-	[Header("회전체 루트")]
-	[SerializeField] private Transform _rotateRootTr;
-
 	[Header("회전 감도")]
 	[SerializeField] private float _sensitivity = 2.0f;
 
@@ -39,7 +36,6 @@ public class CameraController : MonoBehaviour
 		_yaw = _startYaw;
 		_pitch = _startPitch;
 	}
-
 
 	private void LateUpdate()
 	{
