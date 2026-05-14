@@ -1,4 +1,4 @@
-using UnityEditor.Rendering;
+using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private Transform _characterMeshTr;
 	[SerializeField] private Vector3 _rotateOffset;
 	[SerializeField] private float _aimRotSharpness = 10f;
-	[SerializeField] private CameraPriorityHandler _cameraPriorityHandler;
 
 	[Header("이동 속도")]
 	[SerializeField] private float _walkSpeed = 5.0f;
@@ -50,13 +49,14 @@ public class PlayerController : MonoBehaviour
 
 	public bool IsAiming => _isAiming;
 
+	public Action<bool> OnAimChanged;
+
 	private void Awake()
 	{
 		if (_controller == null ||
 			_playerAnimator == null ||
 			_playerShooter == null ||
-			_characterMeshTr == null ||
-			_cameraPriorityHandler == null)
+			_characterMeshTr == null)
 		{
 			Debug.LogWarning($"[{name}] 인스펙터 null");
 			gameObject.SetActive(false);
@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
 			{
 				Debug.Log($"[{name}] 조준 시퀀스 활성화.");
 			}
-			_cameraPriorityHandler.ChangeCamera(IsAiming);
+			OnAimChanged?.Invoke(IsAiming);
 		}
 
 		bool isRunning = 

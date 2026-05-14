@@ -4,6 +4,8 @@ using UnityEngine;
 public class CameraPriorityHandler : MonoBehaviour
 {
 	#region 인스펙터
+	[SerializeField] private PlayerController _playerController;
+
 	[Header("가상 카메라")]
 	[SerializeField] private CinemachineVirtualCamera _normalCam;
 	[SerializeField] private CinemachineVirtualCamera _aimCam;
@@ -20,7 +22,8 @@ public class CameraPriorityHandler : MonoBehaviour
 
 	private void Awake()
 	{
-		if (_normalCam == null ||
+		if (_playerController == null ||
+			_normalCam == null ||
 			_aimCam == null ||
 			_normalAnchor == null ||
 			_aimAnchor == null)
@@ -28,6 +31,22 @@ public class CameraPriorityHandler : MonoBehaviour
 			Debug.LogWarning($"[{name}] 인스펙터 null 감지");
 			gameObject.SetActive(false);
 			return;
+		}
+	}
+
+	private void OnEnable()
+	{
+		if (_playerController != null)
+		{
+			_playerController.OnAimChanged += ChangeCamera;
+		}
+	}
+
+	private void OnDisable()
+	{
+		if (_playerController != null)
+		{
+			_playerController.OnAimChanged -= ChangeCamera;
 		}
 	}
 

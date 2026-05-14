@@ -34,5 +34,10 @@ public class AimIKHandler : MonoBehaviour
 
 		float t = 1f - Mathf.Exp(-_aimSharpness * Time.deltaTime);
 		_aimRig.weight = Mathf.Lerp(_aimRig.weight, targetWeight, t);
+
+		if (Mathf.Abs(_aimRig.weight - targetWeight) < 0.001f)
+		{
+			_aimRig.weight = targetWeight;
+		}
 	}
 }
