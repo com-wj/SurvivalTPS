@@ -1,3 +1,4 @@
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -11,6 +12,8 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private CameraController _cameraController; // cs
 	[SerializeField] private Transform _characterMeshTr;
 	[SerializeField] private Vector3 _rotateOffset;
+	[SerializeField] private float _aimRotSharpness = 10f;
+	[SerializeField] private CameraPriorityHandler _cameraPriorityHandler;
 
 	[Header("이동 속도")]
 	[SerializeField] private float _walkSpeed = 5.0f;
@@ -32,6 +35,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private bool _isAiming = false;
 
 	[Header("디버그")]
+	[SerializeField] private bool _printLog = false;
 	[SerializeField] private bool _forceAiming;
 	#endregion
 
@@ -40,6 +44,8 @@ public class PlayerController : MonoBehaviour
 
 	private Vector3 _horizontalVel; // 수평(xz) 속도
 	private float _verticalVel; // 수직 속도(y)
+
+	private bool _isAimingSequence = false;
 	#endregion
 
 	public bool IsAiming => _isAiming;
@@ -49,7 +55,8 @@ public class PlayerController : MonoBehaviour
 		if (_controller == null ||
 			_playerAnimator == null ||
 			_playerShooter == null ||
-			_characterMeshTr == null)
+			_characterMeshTr == null ||
+			_cameraPriorityHandler == null)
 		{
 			Debug.LogWarning($"[{name}] 인스펙터 null");
 			gameObject.SetActive(false);
@@ -91,7 +98,18 @@ public class PlayerController : MonoBehaviour
 
 		bool isSideMove = (h != 0) && (v == 0);
 
-		_isAiming = _forceAiming || Input.GetMouseButton(1);
+		bool currentAimInput = _forceAiming || Input.GetMouseButton(1);
+		if (_isAiming != currentAimInput)
+		{
+			_isAiming = currentAimInput;
+			_isAimingSequence = true;
+			if (_printLog)
+			{
+				Debug.Log($"[{name}] 조준 시퀀스 활성화.");
+			}
+			_cameraPriorityHandler.ChangeCamera(IsAiming);
+		}
+
 		bool isRunning = 
 			(
 			Input.GetKey(_runKey) &&
@@ -167,19 +185,41 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
+	// 이동 중이거나 조준 중 캐릭터 메쉬 회전
 	private void RotateCharacter()
 	{
 		if (_cameraController == null) return;
 		if (_characterMeshTr == null) return;
 
 		bool isMoving = (_horizontalVel.sqrMagnitude > 0.0001f); // 이동 중
+		float targetYaw = _cameraController.CurrentYaw;
+
+		if (_isAimingSequence) // 조준 시퀀스
+		{
+			Vector3 Rot = new Vector3(0, targetYaw, 0);
+			Rot += _isAiming ? _rotateOffset : Vector3.zero;
+
+			Quaternion targetRot = Quaternion.Euler(Rot);
+
+			Quaternion currentRot = _characterMeshTr.localRotation;
+
+			float t = 1f - Mathf.Exp(-_aimRotSharpness * Time.deltaTime);
+			_characterMeshTr.localRotation = Quaternion.Slerp(currentRot, targetRot, t);
+
+			// 보간 종료
+			if (Quaternion.Angle(_characterMeshTr.localRotation, targetRot) < 0.1f)
+			{
+				_characterMeshTr.localRotation = targetRot;
+				_isAimingSequence = false;
+			}
+
+			return;
+		}
 
 		if (_isAiming || isMoving)
 		{
-			float targetYaw = _cameraController.CurrentYaw;
-			Vector3 targetRot = new Vector3(0, targetYaw, 0)
-				//+ _rotateOffset
-				;
+			Vector3 targetRot = new Vector3(0, targetYaw, 0);
+			targetRot += _isAiming ? _rotateOffset : Vector3.zero; // 조준 중 오프셋 보정
 
 			_characterMeshTr.localRotation = Quaternion.Euler(targetRot);
 		}

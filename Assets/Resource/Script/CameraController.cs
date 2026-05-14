@@ -14,6 +14,7 @@ public class CameraController : MonoBehaviour
 
 	[Header("디버그")]
 	[SerializeField] private bool _mouseVisible = false;
+	[SerializeField] private bool _printLog = false;
 	#endregion
 
 	#region 내부 변수
@@ -22,6 +23,7 @@ public class CameraController : MonoBehaviour
 	#endregion
 
 	public float CurrentYaw => _yaw;
+	public float CurrentPitch => _pitch;
 
 	private void Awake()
 	{
@@ -46,6 +48,17 @@ public class CameraController : MonoBehaviour
 
 		_pitch -= my;
 		_pitch = Mathf.Clamp(_pitch, _minPitch, _maxPitch); // 상하 제한
+
+		transform.localRotation = Quaternion.Euler(_pitch, _yaw, 0);
+	}
+
+	public void CameraPitchUpdate(CameraController prevCam)
+	{
+		_pitch = Mathf.Clamp(prevCam.CurrentPitch, _minPitch, _maxPitch);
+		if (_printLog)
+		{
+			Debug.Log($"[{name}] Pitch 업데이트 : {prevCam.CurrentPitch} → {_pitch}");
+		}
 
 		transform.localRotation = Quaternion.Euler(_pitch, _yaw, 0);
 	}

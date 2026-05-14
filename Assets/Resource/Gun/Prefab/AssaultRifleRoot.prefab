@@ -32,6 +32,7 @@ Transform:
   - {fileID: 8612780450045000233}
   - {fileID: 6309333053227961065}
   - {fileID: 593068486169098764}
+  - {fileID: 817772197515218080}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7201352427909346597
@@ -89,12 +90,43 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7568523921148419625}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.16223575, y: -0.76889455, z: 0.58194214, w: 0.20934212}
-  m_LocalPosition: {x: -0.015319997, y: 0.0038199963, z: 0.003250001}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.1622356, y: -0.76889455, z: 0.5819422, w: 0.20934212}
+  m_LocalPosition: {x: -0.015319993, y: 0.0038199958, z: 0.0032500033}
+  m_LocalScale: {x: 0.049999997, y: 0.049999997, z: 0.050000012}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8612780450045000233}
+  m_LocalEulerAnglesHint: {x: 124.20999, y: 65.289, z: 241.294}
+--- !u!1 &8073622481353241583
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 817772197515218080}
+  m_Layer: 6
+  m_Name: LeftHandMount (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &817772197515218080
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8073622481353241583}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7318139, y: 0.013939813, z: 0.23162267, w: -0.64078474}
+  m_LocalPosition: {x: 0.3305713, y: -0.018130872, z: 0.13870032}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5135359446469234755}
   m_LocalEulerAnglesHint: {x: 124.20999, y: 65.289, z: 241.294}
 --- !u!1001 &4423350565075863852
 PrefabInstance:
@@ -332,7 +364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _leftHandMountTr: {fileID: 1908457418497531183}
-  _firePosTr: {fileID: 0}
+  _firePoint: {fileID: 0}
   _fireMode: 0
   _damage: 0
   _fireInterval: 0
@@ -342,3 +374,7 @@ MonoBehaviour:
   _reloadInterval: 0
   _muzzleFlash: {fileID: 2074197938032550150}
   _fireAudio: {fileID: 0}
+  _targetLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  _drawRay: 0
