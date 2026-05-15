@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1543995922254604150}
   - component: {fileID: 8333986907495215223}
   m_Layer: 6
-  m_Name: CameraTarget
+  m_Name: CameraAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,6 +50,7 @@ MonoBehaviour:
   _minPitch: -30
   _maxPitch: 45
   _mouseVisible: 0
+  _printLog: 0
 --- !u!1 &4156955705194981968
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +165,6 @@ MonoBehaviour:
   _characterMeshTr: {fileID: 5856029272824813096}
   _rotateOffset: {x: 0, y: 25, z: 0}
   _aimRotSharpness: 10
-  _cameraPriorityHandler: {fileID: 0}
   _walkSpeed: 3
   _landingMoveSpeedMultiplier: 0
   _aimingMoveSpeedMultiplier: 0.5
@@ -176,7 +176,7 @@ MonoBehaviour:
   _gravity: -9.81
   _groundStick: -2
   _isAiming: 0
-  _printLog: 1
+  _printLog: 0
   _forceAiming: 0
 --- !u!114 &4985903341929718339
 MonoBehaviour:
@@ -191,6 +191,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 550819369601387602}
+  _playerController: {fileID: 1849770477902813770}
+  _playerShooter: {fileID: 2498472057129554550}
   _paramMoveX: fMoveX
   _paramMoveY: fMoveY
   _paramJump: tJump
@@ -218,7 +220,7 @@ MonoBehaviour:
   _aimTarget: {fileID: 0}
   _targetLayer:
     serializedVersion: 2
-    m_Bits: 443
+    m_Bits: 187
   _maxDistance: 100
 --- !u!1 &4327681119966525622
 GameObject:
@@ -293,15 +295,15 @@ MonoBehaviour:
       m_Item7:
         transform: {fileID: 0}
         weight: 0
-    m_Offset: {x: -135, y: 0, z: 0}
+    m_Offset: {x: -30, y: 0, z: 0}
     m_MinLimit: -180
     m_MaxLimit: 180
-    m_AimAxis: 4
-    m_UpAxis: 2
+    m_AimAxis: 3
+    m_UpAxis: 1
     m_WorldUpType: 0
     m_WorldUpObject: {fileID: 0}
     m_WorldUpAxis: 2
-    m_MaintainOffset: 0
+    m_MaintainOffset: 1
     m_ConstrainedAxes:
       x: 1
       y: 1
@@ -379,15 +381,15 @@ MonoBehaviour:
       m_Item7:
         transform: {fileID: 0}
         weight: 0
-    m_Offset: {x: -135, y: 0, z: 0}
+    m_Offset: {x: -30, y: 0, z: 0}
     m_MinLimit: -180
     m_MaxLimit: 180
-    m_AimAxis: 4
-    m_UpAxis: 2
+    m_AimAxis: 3
+    m_UpAxis: 1
     m_WorldUpType: 0
     m_WorldUpObject: {fileID: 0}
     m_WorldUpAxis: 2
-    m_MaintainOffset: 0
+    m_MaintainOffset: 1
     m_ConstrainedAxes:
       x: 1
       y: 1
@@ -498,15 +500,15 @@ MonoBehaviour:
       m_Item7:
         transform: {fileID: 0}
         weight: 0
-    m_Offset: {x: -135, y: 0, z: 0}
+    m_Offset: {x: -30, y: 0, z: 0}
     m_MinLimit: -180
     m_MaxLimit: 180
-    m_AimAxis: 4
-    m_UpAxis: 2
+    m_AimAxis: 3
+    m_UpAxis: 1
     m_WorldUpType: 0
     m_WorldUpObject: {fileID: 0}
     m_WorldUpAxis: 2
-    m_MaintainOffset: 0
+    m_MaintainOffset: 1
     m_ConstrainedAxes:
       x: 1
       y: 1
@@ -522,7 +524,7 @@ GameObject:
   - component: {fileID: 4094687361577853737}
   - component: {fileID: 4845874617236483395}
   m_Layer: 6
-  m_Name: CameraTargetAim
+  m_Name: CameraAnchorAim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -558,9 +560,10 @@ MonoBehaviour:
   _sensitivity: 2
   _startPitch: 0
   _startYaw: -5
-  _minPitch: -30
-  _maxPitch: 45
+  _minPitch: -20
+  _maxPitch: 20
   _mouseVisible: 0
+  _printLog: 0
 --- !u!1 &5101835316673933776
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,15 +746,15 @@ MonoBehaviour:
       m_Item7:
         transform: {fileID: 0}
         weight: 0
-    m_Offset: {x: -135, y: 0, z: 0}
+    m_Offset: {x: -30, y: 0, z: 0}
     m_MinLimit: -180
     m_MaxLimit: 180
-    m_AimAxis: 4
-    m_UpAxis: 2
+    m_AimAxis: 3
+    m_UpAxis: 1
     m_WorldUpType: 0
     m_WorldUpObject: {fileID: 0}
     m_WorldUpAxis: 2
-    m_MaintainOffset: 0
+    m_MaintainOffset: 1
     m_ConstrainedAxes:
       x: 1
       y: 1
@@ -860,15 +863,15 @@ MonoBehaviour:
       m_Item7:
         transform: {fileID: 0}
         weight: 0
-    m_Offset: {x: -135, y: 0, z: 0}
+    m_Offset: {x: -30, y: 0, z: 0}
     m_MinLimit: -180
     m_MaxLimit: 180
-    m_AimAxis: 4
-    m_UpAxis: 2
+    m_AimAxis: 3
+    m_UpAxis: 1
     m_WorldUpType: 0
     m_WorldUpObject: {fileID: 0}
     m_WorldUpAxis: 2
-    m_MaintainOffset: 0
+    m_MaintainOffset: 1
     m_ConstrainedAxes:
       x: 1
       y: 1

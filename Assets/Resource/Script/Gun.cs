@@ -19,8 +19,8 @@ public class Gun : MonoBehaviour
 
 	[Header("사격")]
 	[SerializeField] private EFireMode _fireMode; // 사격 모드
-	[SerializeField] private int _damage; // 피해량
-	[SerializeField] private float _fireInterval; // 발사 간격
+	[SerializeField] private float _damage = 1f; // 피해량
+	[SerializeField, Min(0.1f)] private float _rpm = 600f; // 분당 발사 수
 	[SerializeField] private float _maxDistance; // 유효 거리
 
 	[Header("장전")]
@@ -42,11 +42,36 @@ public class Gun : MonoBehaviour
 
 	#region 내부 변수
 	private float _lastFireTime;
+	private float _fireInterval; // 발사 간격
 	private Vector3 _toTarget; // 디버그용
 	#endregion
 
 	public Transform LeftHandMount => _leftHandMountTr != null ? _leftHandMountTr : null;
 	public bool CanFire => Time.time > _lastFireTime + _fireInterval;
+
+	private void Awake()
+	{
+		if (_leftHandMountTr == null ||
+			_firePoint == null)
+		{
+			Debug.LogWarning($"[{name}] 인스펙터 null");
+			gameObject.SetActive(false);
+			return;
+		}
+
+		CalculateFireInterval();
+	}
+
+	private void CalculateFireInterval()
+	{
+		if (_rpm <= 0)
+		{
+			Debug.LogWarning($"[{name}] rpm 수치가 너무 낮음. [{_rpm}]");
+			_rpm = 1f;
+		}
+
+		_fireInterval = 60f / _rpm;
+	}
 
 	public void OnFire(Vector3 targetPos)
 	{
@@ -64,21 +89,16 @@ public class Gun : MonoBehaviour
 				target.TakeDamage(_damage);
 			}
 
-			SummonImpactEffect(hit);
+			if (VFXManager.Instance != null)
+			{
+				VFXManager.Instance.PlayHitImpact(hit);
+			}
 		}
 
 		// 총구 화염
 		if (_muzzleFlash == null) return;
 
 		_muzzleFlash.Play();
-	}
-
-	// 타격 이펙트
-	private void SummonImpactEffect(RaycastHit hit)
-	{
-
-		int layer = hit.collider.gameObject.layer;
-		// VFXManager.instance.SummonImpactEffect(layer);
 	}
 
 	private void OnDrawGizmos()

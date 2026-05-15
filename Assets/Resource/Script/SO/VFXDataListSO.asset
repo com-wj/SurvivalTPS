@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6269a85c6ef01c8449b40b4b3be3b698, type: 3}
+  m_Name: VFXDataListSO
+  m_EditorClassIdentifier: 
+  _vfxEntries:
+  - key: Creature
+    prefab: {fileID: -8919570888270625182, guid: 035e228f2a9f84542920813d0d8422c5,
+      type: 3}
+  - key: Metal
+    prefab: {fileID: 3668686782022185218, guid: 5d516f131d0752b489f89fab2217f08b,
+      type: 3}
+  - key: Concrete
+    prefab: {fileID: -7510609911735352621, guid: d805a03536620f5439ac212ac2f1fd99,
+      type: 3}
+  - key: Decal
+    prefab: {fileID: 719847016278396546, guid: bbb4906bec0161b4aa76ddc4361639ee, type: 3}

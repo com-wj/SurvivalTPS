@@ -1,10 +1,14 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
+	#region 인스펙터
 	[SerializeField] private bool _dontDestroyOnLoad = false;
+	#endregion
 
+	#region 내부 변수
 	private static T _instance;
+	#endregion
 
 	public static T Instance
 	{

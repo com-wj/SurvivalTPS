@@ -1,53 +1,53 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PoolManager : Singleton<PoolManager>
 {
-	private readonly Dictionary<GameObject, Queue<GameObject>> _pools = new Dictionary<GameObject, Queue<GameObject>>(); // 다중 풀
+	private readonly Dictionary<PooledObject, Queue<PooledObject>> _pools = new Dictionary<PooledObject, Queue<PooledObject>>(); // 다중 풀
 
 	private readonly Dictionary<GameObject, Transform> _roots = new Dictionary<GameObject, Transform>(); // 하이어라키 정리용 트랜스폼
 
-	public void Push(GameObject prefab, GameObject go)
+	public void Push(PooledObject prefab, PooledObject obj)
 	{
-		if (go == null) return;
+		if (obj == null) return;
 
-		go.SetActive(false);
+		obj.gameObject.SetActive(false);
 
 		if (!_pools.ContainsKey(prefab))
 		{
-			_pools.Add(prefab, new Queue<GameObject>());
-			CreateRoot(prefab);
+			_pools.Add(prefab, new Queue<PooledObject>());
+			CreateRoot(prefab.gameObject);
 		}
 
-		go.transform.SetParent(_roots[prefab]);
-		_pools[prefab].Enqueue(go);
+		obj.transform.SetParent(_roots[prefab.gameObject]);
+		_pools[prefab].Enqueue(obj);
 	}
 
-	public GameObject Pop(GameObject prefab, Vector3 position, Quaternion rotation)
+	public PooledObject Pop(PooledObject prefab, Vector3 position, Quaternion rotation)
 	{
 		if (!_pools.ContainsKey(prefab))
 		{
-			_pools.Add(prefab, new Queue<GameObject>());
-			CreateRoot(prefab);
+			_pools.Add(prefab, new Queue<PooledObject>());
+			CreateRoot(prefab.gameObject);
 		}
 
-		GameObject go;
+		PooledObject obj;
 
 		if (_pools[prefab].Count > 0)
 		{
-			go = _pools[prefab].Dequeue();
-			go.transform.position = position;
-			go.transform.rotation = rotation;
-			go.transform.SetParent(null);
-			go.SetActive(true);
+			obj = _pools[prefab].Dequeue();
+			obj.transform.position = position;
+			obj.transform.rotation = rotation;
+			obj.transform.SetParent(null);
+			obj.gameObject.SetActive(true);
 		}
 		else
 		{
-			go = Instantiate(prefab, position, rotation);
-			// go.Init(); 생성 시점에 originPrefab 주입.
+			obj = Instantiate(prefab, position, rotation);
 		}
+		obj.Init(prefab);
 
-		return go;
+		return obj;
 	}
 
 	// 하이어라키 루트 트랜스폼 생성

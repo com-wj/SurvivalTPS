@@ -2,10 +2,16 @@ using UnityEngine;
 
 public class EnemyBase : MonoBehaviour, IDamageable
 {
+	#region 인스펙터
 	[SerializeField] private float _currentHp;
-	[SerializeField] private bool _printLog;
 
+	[Header("디버그")]
+	[SerializeField] private bool _printLog;
+	#endregion
+
+	#region 인스펙터
 	private bool _isDead = false;
+	#endregion
 
 	public void TakeDamage(float damage)
 	{
@@ -14,7 +20,7 @@ public class EnemyBase : MonoBehaviour, IDamageable
 		_currentHp -= damage;
 		if (_printLog)
 		{
-			Debug.Log($"[{name}] {damage} 피해 입음.");
+			Debug.Log($"[{name}] {damage} 피해 입음. 남은 체력:{_currentHp}");
 		}
 
 		if (_currentHp < 0)
