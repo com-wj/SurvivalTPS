@@ -4,6 +4,8 @@ public class PlayerAnimator : MonoBehaviour
 {
 	#region 인스펙터
 	[SerializeField] private Animator _animator;
+	[SerializeField] private PlayerController _playerController;
+	[SerializeField] private PlayerShooter _playerShooter;
 
 	[Header("애니메이터 파라미터")]
 	// 이동
@@ -44,7 +46,9 @@ public class PlayerAnimator : MonoBehaviour
 
 	private void Awake()
 	{
-		if (_animator == null)
+		if (_animator == null ||
+			_playerController == null ||
+			_playerShooter == null)
 		{
 			Debug.LogWarning($"[{name}] 인스펙터 null");
 			gameObject.SetActive(false);
@@ -73,6 +77,30 @@ public class PlayerAnimator : MonoBehaviour
 		{
 			_hashAim = Animator.StringToHash(_paramAim);
 			_hashFire = Animator.StringToHash(_paramFire);
+		}
+	}
+
+	private void OnEnable()
+	{
+		if (_playerController != null)
+		{
+			_playerController.AimChanged += OnAim;
+		}
+		if (_playerShooter != null)
+		{
+			_playerShooter.Fire += OnFire;
+		}
+	}
+
+	private void OnDisable()
+	{
+		if (_playerController != null)
+		{
+			_playerController.AimChanged -= OnAim;
+		}
+		if (_playerShooter != null)
+		{
+			_playerShooter.Fire -= OnFire;
 		}
 	}
 

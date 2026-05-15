@@ -38,7 +38,7 @@ public class CameraPriorityHandler : MonoBehaviour
 	{
 		if (_playerController != null)
 		{
-			_playerController.OnAimChanged += ChangeCamera;
+			_playerController.AimChanged += ChangeCamera;
 		}
 	}
 
@@ -46,7 +46,7 @@ public class CameraPriorityHandler : MonoBehaviour
 	{
 		if (_playerController != null)
 		{
-			_playerController.OnAimChanged -= ChangeCamera;
+			_playerController.AimChanged -= ChangeCamera;
 		}
 	}
 

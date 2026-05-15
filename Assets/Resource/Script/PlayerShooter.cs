@@ -1,5 +1,9 @@
+using System;
 using UnityEngine;
 
+/// <summary>
+/// 조준과 사격 관련 처리 로직
+/// </summary>
 public class PlayerShooter : MonoBehaviour
 {
 	#region 인스펙터
@@ -16,8 +20,12 @@ public class PlayerShooter : MonoBehaviour
 	#endregion
 
 	#region 내부 변수
+	private bool _isAiming;
+
 	private Vector3 _currentTargetPos;
 	#endregion
+
+	public event Action Fire; // 격발 이벤트
 
 	private void Awake()
 	{
@@ -36,11 +44,37 @@ public class PlayerShooter : MonoBehaviour
 		}
 	}
 
+	private void OnEnable()
+	{
+		if (_playerController != null)
+		{
+			_playerController.AimChanged += OnAimChanged;
+		}
+	}
+
+	private void OnDisable()
+	{
+		if (_playerController != null)
+		{
+			_playerController.AimChanged -= OnAimChanged;
+		}
+	}
+
+	public void OnAimChanged(bool isAiming)
+	{
+		_isAiming = isAiming;
+	}
+
 	private void Update()
 	{
-		if (_playerController.IsAiming)
+		if (_isAiming)
 		{
 			UpdateTargetPoint();
+
+			if (Input.GetMouseButton(0))
+			{
+				TryShoot();
+			}
 		}
 	}
 
@@ -65,7 +99,7 @@ public class PlayerShooter : MonoBehaviour
 		}
 	}
 
-	public void TryShoot()
+	private void TryShoot()
 	{
 		if (_currentGun == null)
 		{
@@ -76,5 +110,6 @@ public class PlayerShooter : MonoBehaviour
 		if (!_currentGun.CanFire) return;
 
 		_currentGun.OnFire(_currentTargetPos);
+		Fire?.Invoke();
 	}
 }

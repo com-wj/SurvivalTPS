@@ -1,6 +1,9 @@
 using System;
 using UnityEngine;
 
+/// <summary>
+/// 입력에 따른 캐릭터 트랜스폼 조작과 파라미터 전송
+/// </summary>
 public class PlayerController : MonoBehaviour
 {
 	#region 인스펙터
@@ -47,9 +50,9 @@ public class PlayerController : MonoBehaviour
 	private bool _isAimingSequence = false;
 	#endregion
 
-	public bool IsAiming => _isAiming;
+	//public bool IsAiming => _isAiming;
 
-	public Action<bool> OnAimChanged;
+	public event Action<bool> AimChanged; // 조준 상태 변화 이벤트
 
 	private void Awake()
 	{
@@ -107,7 +110,7 @@ public class PlayerController : MonoBehaviour
 			{
 				Debug.Log($"[{name}] 조준 시퀀스 활성화.");
 			}
-			OnAimChanged?.Invoke(IsAiming);
+			AimChanged?.Invoke(_isAiming);
 		}
 
 		bool isRunning = 
@@ -150,16 +153,6 @@ public class PlayerController : MonoBehaviour
 		v *= !_isAiming && isRunning ? 2f : 1f;
 		_playerAnimator.OnMove(h, v);
 		_playerAnimator.UpdateAirParam(_controller.isGrounded, _verticalVel);
-
-		_playerAnimator.OnAim(_isAiming);
-		if (_isAiming)
-		{
-			if (Input.GetMouseButton(0))
-			{
-				_playerAnimator.OnFire();
-				_playerShooter.TryShoot();
-			}
-		}
 
 		RotateCharacter();
 	}
@@ -216,7 +209,7 @@ public class PlayerController : MonoBehaviour
 			return;
 		}
 
-		if (_isAiming || isMoving)
+		if (_isAiming || isMoving) // 조준 중이거나, 이동 중이면
 		{
 			Vector3 targetRot = new Vector3(0, targetYaw, 0);
 			targetRot += _isAiming ? _rotateOffset : Vector3.zero; // 조준 중 오프셋 보정
