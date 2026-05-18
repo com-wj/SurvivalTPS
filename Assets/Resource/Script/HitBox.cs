@@ -26,9 +26,21 @@ public class HitBox : MonoBehaviour, IDamageable
 	private void Awake()
 	{
 		// 피해 주체 탐색
-		if (transform.parent != null)
+		_root = transform.root.GetComponent<IDamageable>();
+
+		if (_root == null)
 		{
-			_root = transform.parent.GetComponentInParent<IDamageable>();
+			if (transform.parent != null)
+			{
+				_root = transform.parent.GetComponentInParent<IDamageable>();
+			}
+		}
+		else
+		{
+			if (_printLog)
+			{
+				Debug.Log($"[{name}] 최상위 root 탐색. {_root}");
+			}
 		}
 
 		if (_root == null)

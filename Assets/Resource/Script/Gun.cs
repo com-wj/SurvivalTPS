@@ -30,7 +30,6 @@ public class Gun : MonoBehaviour
 
 	[Header("FX")]
 	[SerializeField] private ParticleSystem _muzzleFlash; // 격발 VFX
-	//[SerializeField] private MuzzleFlash _muzzleFlash; // 격발 VFX
 	[SerializeField] private AudioClip _fireAudio; // 격발 SFX
 
 	[Header("레이어 마스크")]
