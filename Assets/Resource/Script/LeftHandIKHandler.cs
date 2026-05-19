@@ -30,6 +30,8 @@ public class LeftHandIKHandler : MonoBehaviour
 		// 왼손 마운트
 		if (_gun == null) return;
 
+		if (_gun.IsReloading) return;
+
 		Transform targetTr = _gun.LeftHandMount;
 
 		if(targetTr == null) return;

@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 public enum EFireMode
@@ -27,6 +29,7 @@ public class Gun : MonoBehaviour
 	[SerializeField] private int _magCapacity; // 탄창 용량
 	[SerializeField] private int _currentAmmo; // 남은 장탄 수
 	[SerializeField] private float _reloadInterval; // 장전 시간
+	[SerializeField] private float _reloadAnimLength; // 재장전 애니메이션 재생 시간
 
 	[Header("FX")]
 	[SerializeField] private ParticleSystem _muzzleFlash; // 격발 VFX
@@ -37,16 +40,28 @@ public class Gun : MonoBehaviour
 
 	[Header("디버그")]
 	[SerializeField] private bool _drawRay = false;
+	[SerializeField] private int _totalAmmo = 300; // 보유 탄약(디버그)
 	#endregion
 
 	#region 내부 변수
 	private float _lastFireTime;
 	private float _fireInterval; // 발사 간격
+	private bool _isReloading = false;
+	private Coroutine _routine;
+
 	private Vector3 _toTarget; // 디버그용
 	#endregion
 
 	public Transform LeftHandMount => _leftHandMountTr != null ? _leftHandMountTr : null;
-	public bool CanFire => Time.time > _lastFireTime + _fireInterval;
+	public bool CanFire => 
+		(Time.time > _lastFireTime + _fireInterval) &&
+		(_currentAmmo > 0);
+	public bool CanReload => (_currentAmmo != _magCapacity) && (_totalAmmo > 0);
+	public int CurrnetAmmo => _currentAmmo;
+	public bool IsEmptyAmmo => _currentAmmo == 0;
+	public bool IsReloading => _isReloading;
+
+	public event Action ReloadComplete;
 
 	private void Awake()
 	{
@@ -74,7 +89,10 @@ public class Gun : MonoBehaviour
 
 	public void OnFire(Vector3 targetPos)
 	{
+		if (_currentAmmo <= 0) return;
+
 		_lastFireTime = Time.time;
+		_currentAmmo--;
 
 		if (_firePoint == null) return;
 
@@ -98,6 +116,42 @@ public class Gun : MonoBehaviour
 		if (_muzzleFlash == null) return;
 
 		_muzzleFlash.Play();
+	}
+
+	public float OnReload()
+	{
+		if (_isReloading) return 0f;
+
+		_isReloading = true;
+
+		if (_routine != null)
+		{
+			StopCoroutine(_routine);
+			_routine = null;
+		}
+		_routine = StartCoroutine(Co_Reloading());
+
+		float animSpeedMultiplier = _reloadAnimLength / _reloadInterval;
+		return animSpeedMultiplier;
+	}
+
+	private IEnumerator Co_Reloading()
+	{
+		float elasped = 0;
+		while (elasped < _reloadInterval)
+		{
+			elasped += Time.deltaTime;
+			yield return null;
+		}
+
+		int needAmmo = _magCapacity - _currentAmmo;
+		int reFill = Mathf.Min(needAmmo, _totalAmmo);
+
+		_currentAmmo += reFill;
+		_totalAmmo -= reFill;
+
+		_isReloading = false;
+		ReloadComplete?.Invoke();
 	}
 
 	private void OnDrawGizmos()

@@ -21,6 +21,10 @@ public class PlayerAnimator : MonoBehaviour
 	[SerializeField] private string _paramAim = "bAim";
 	[SerializeField] private string _paramFire = "tFire";
 
+	// 재장전
+	[SerializeField] private string _paramReload = "tReload";
+	[SerializeField] private string _paramReloadSpeed = "fReloadSpeed";
+
 	[Header("애니메이션 태그")]
 	[SerializeField] private string _tagHardLanding = "HardLanding";
 
@@ -39,6 +43,9 @@ public class PlayerAnimator : MonoBehaviour
 
 	private int _hashAim;
 	private int _hashFire;
+
+	private int _hashReload;
+	private int _hashReloadSpeed;
 
 	private bool _hasJumpParam;
 	private bool _hasAimParam;
@@ -77,6 +84,8 @@ public class PlayerAnimator : MonoBehaviour
 		{
 			_hashAim = Animator.StringToHash(_paramAim);
 			_hashFire = Animator.StringToHash(_paramFire);
+			_hashReload = Animator.StringToHash(_paramReload);
+			_hashReloadSpeed = Animator.StringToHash(_paramReloadSpeed);
 		}
 	}
 
@@ -89,6 +98,7 @@ public class PlayerAnimator : MonoBehaviour
 		if (_playerShooter != null)
 		{
 			_playerShooter.Fire += OnFire;
+			_playerShooter.Reload += OnReload;
 		}
 	}
 
@@ -101,6 +111,7 @@ public class PlayerAnimator : MonoBehaviour
 		if (_playerShooter != null)
 		{
 			_playerShooter.Fire -= OnFire;
+			_playerShooter.Reload -= OnReload;
 		}
 	}
 
@@ -131,6 +142,15 @@ public class PlayerAnimator : MonoBehaviour
 		if (_hasAimParam)
 		{
 			_animator.SetTrigger(_hashFire);
+		}
+	}
+
+	public void OnReload(float animSpeedMultiplier)
+	{
+		if (_hasAimParam)
+		{
+			_animator.SetFloat(_hashReloadSpeed, animSpeedMultiplier);
+			_animator.SetTrigger(_hashReload);
 		}
 	}
 

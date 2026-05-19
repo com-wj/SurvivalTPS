@@ -25,7 +25,19 @@ public class PlayerShooter : MonoBehaviour
 	private Vector3 _currentTargetPos;
 	#endregion
 
+	public bool CanAim
+	{
+		get
+		{
+			if (_currentGun != null && _currentGun.IsReloading)
+				return false;
+			
+			return true;
+		}
+	}
+
 	public event Action Fire; // 격발 이벤트
+	public event Action<float> Reload; // 장전 이벤트.
 
 	private void Awake()
 	{
@@ -65,16 +77,43 @@ public class PlayerShooter : MonoBehaviour
 		_isAiming = isAiming;
 	}
 
+	public void EquipWeapon(Gun newGunPrefab)
+	{
+		if (_currentGun != null)
+		{
+			
+		}
+	}
+
 	private void Update()
 	{
+		bool mouseLeftButton = Input.GetMouseButton(0);
+		bool reloadInput = Input.GetKeyDown(KeyCode.R);
+
+		if (reloadInput) // 재장전 입력 시 장전
+		{
+			TryReload();
+			return;
+		}
+
 		if (_isAiming)
 		{
 			UpdateTargetPoint();
 
-			if (Input.GetMouseButton(0))
+			if (mouseLeftButton)
 			{
 				TryShoot();
 			}
+			else if(_currentGun != null && _currentGun.IsEmptyAmmo) // 조준 중 좌클릭이 떼졌을 때 자동 장전
+			{
+				TryReload();
+				return;
+			}
+		}
+		else if (_currentGun != null && _currentGun.IsEmptyAmmo) // 비조준 중 탄약이 없으면 자동 장전
+		{
+			TryReload();
+			return;
 		}
 	}
 
@@ -111,5 +150,22 @@ public class PlayerShooter : MonoBehaviour
 
 		_currentGun.OnFire(_currentTargetPos);
 		Fire?.Invoke();
+	}
+
+	// 자동 장전
+	private void TryReload()
+	{
+		if (_currentGun == null) return;
+
+		if(_currentGun.IsReloading) return;
+
+		if (!_currentGun.CanReload) return;
+
+		float AnimSpeedMultiplier = _currentGun.OnReload();
+		if (AnimSpeedMultiplier <= 0f)
+		{
+			Debug.LogWarning($"[{name}] 재장전 애니메이션 속도 이상. {AnimSpeedMultiplier}");
+		}
+		Reload?.Invoke(AnimSpeedMultiplier);
 	}
 }

@@ -95,16 +95,19 @@ MonoBehaviour:
   _firePoint: {fileID: 7791788847229059346}
   _fireMode: 0
   _damage: 1
-  _fireInterval: 0.2
+  _rpm: 600
   _maxDistance: 30
   _magCapacity: 30
   _currentAmmo: 30
-  _reloadInterval: 1.5
+  _reloadInterval: 2.5
+  _reloadAnimLength: 6.433
   _muzzleFlash: {fileID: 8706572989398850072}
   _fireAudio: {fileID: 0}
   _targetLayer:
     serializedVersion: 2
     m_Bits: 392
+  _drawRay: 0
+  _totalAmmo: 300
 --- !u!4 &7791788847229059346 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 593068486169098764, guid: ef60997d6abb81e48be7fddae29393f7,

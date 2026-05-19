@@ -101,7 +101,8 @@ public class PlayerController : MonoBehaviour
 
 		bool isSideMove = (h != 0) && (v == 0);
 
-		bool currentAimInput = _forceAiming || Input.GetMouseButton(1);
+		bool currentAimInput = (_forceAiming || Input.GetMouseButton(1)) && _playerShooter.CanAim;
+
 		if (_isAiming != currentAimInput)
 		{
 			_isAiming = currentAimInput;
@@ -113,7 +114,7 @@ public class PlayerController : MonoBehaviour
 			AimChanged?.Invoke(_isAiming);
 		}
 
-		bool isRunning = 
+		bool isRunning =
 			(
 			Input.GetKey(_runKey) &&
 			!_isAiming &&
@@ -156,7 +157,7 @@ public class PlayerController : MonoBehaviour
 
 		RotateCharacter();
 	}
-	
+
 	// 이동 방향 설정
 	private Vector3 BuildMoveDirection(Vector3 input)
 	{
