@@ -79,7 +79,9 @@ public class PlayerAnimator : MonoBehaviour
 		}
 
 		_hasAimParam = !string.IsNullOrEmpty(_paramAim) ||
-			!string.IsNullOrEmpty(_paramFire);
+			!string.IsNullOrEmpty(_paramFire) ||
+			!string.IsNullOrEmpty(_paramReload) ||
+			!string.IsNullOrEmpty(_paramReloadSpeed);
 		if (_hasAimParam)
 		{
 			_hashAim = Animator.StringToHash(_paramAim);

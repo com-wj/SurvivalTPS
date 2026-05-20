@@ -17,6 +17,9 @@ public class PlayerShooter : MonoBehaviour
 	[Header("Raycast Setting")]
 	[SerializeField] private LayerMask _targetLayer;
 	[SerializeField] private float _maxDistance = 100f;
+
+	[Header("키 세팅")]
+	[SerializeField] private KeyCode _reloadKey = KeyCode.R;
 	#endregion
 
 	#region 내부 변수
@@ -38,6 +41,7 @@ public class PlayerShooter : MonoBehaviour
 
 	public event Action Fire; // 격발 이벤트
 	public event Action<float> Reload; // 장전 이벤트.
+	public event Action<int, int> AmmoChange; // 탄약 수 변화
 
 	private void Awake()
 	{
@@ -53,6 +57,11 @@ public class PlayerShooter : MonoBehaviour
 			Debug.LogWarning($"[{name}] 인스펙터 null");
 			gameObject.SetActive(false);
 			return;
+		}
+
+		if (_currentGun != null)
+		{
+			_currentGun.ReloadComplete += NotifyAmmoChanged;
 		}
 	}
 
@@ -70,6 +79,10 @@ public class PlayerShooter : MonoBehaviour
 		{
 			_playerController.AimChanged -= OnAimChanged;
 		}
+		if (_currentGun != null)
+		{
+			_currentGun.ReloadComplete -= NotifyAmmoChanged;
+		}
 	}
 
 	public void OnAimChanged(bool isAiming)
@@ -77,18 +90,27 @@ public class PlayerShooter : MonoBehaviour
 		_isAiming = isAiming;
 	}
 
+	// 무기 장착
 	public void EquipWeapon(Gun newGunPrefab)
 	{
 		if (_currentGun != null)
 		{
-			
+			_currentGun.ReloadComplete -= NotifyAmmoChanged;
 		}
+
+		_currentGun = Instantiate(newGunPrefab);
+		if (_currentGun != null)
+		{
+			_currentGun.ReloadComplete += NotifyAmmoChanged;
+		}
+
+		NotifyAmmoChanged();
 	}
 
 	private void Update()
 	{
 		bool mouseLeftButton = Input.GetMouseButton(0);
-		bool reloadInput = Input.GetKeyDown(KeyCode.R);
+		bool reloadInput = Input.GetKeyDown(_reloadKey);
 
 		if (reloadInput) // 재장전 입력 시 장전
 		{
@@ -150,9 +172,11 @@ public class PlayerShooter : MonoBehaviour
 
 		_currentGun.OnFire(_currentTargetPos);
 		Fire?.Invoke();
+
+		NotifyAmmoChanged();
 	}
 
-	// 자동 장전
+	// 장전
 	private void TryReload()
 	{
 		if (_currentGun == null) return;
@@ -167,5 +191,13 @@ public class PlayerShooter : MonoBehaviour
 			Debug.LogWarning($"[{name}] 재장전 애니메이션 속도 이상. {AnimSpeedMultiplier}");
 		}
 		Reload?.Invoke(AnimSpeedMultiplier);
+	}
+
+	// UI 갱신
+	private void NotifyAmmoChanged()
+	{
+		if (_currentGun == null) return;
+
+		AmmoChange?.Invoke(_currentGun.CurrentAmmo, _currentGun.TotalAmmo);
 	}
 }

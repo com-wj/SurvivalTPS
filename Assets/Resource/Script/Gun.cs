@@ -28,6 +28,7 @@ public class Gun : MonoBehaviour
 	[Header("장전")]
 	[SerializeField] private int _magCapacity; // 탄창 용량
 	[SerializeField] private int _currentAmmo; // 남은 장탄 수
+	[SerializeField] private int _totalAmmo; // 보유 탄약
 	[SerializeField] private float _reloadInterval; // 장전 시간
 	[SerializeField] private float _reloadAnimLength; // 재장전 애니메이션 재생 시간
 
@@ -40,7 +41,6 @@ public class Gun : MonoBehaviour
 
 	[Header("디버그")]
 	[SerializeField] private bool _drawRay = false;
-	[SerializeField] private int _totalAmmo = 300; // 보유 탄약(디버그)
 	#endregion
 
 	#region 내부 변수
@@ -57,7 +57,8 @@ public class Gun : MonoBehaviour
 		(Time.time > _lastFireTime + _fireInterval) &&
 		(_currentAmmo > 0);
 	public bool CanReload => (_currentAmmo != _magCapacity) && (_totalAmmo > 0);
-	public int CurrnetAmmo => _currentAmmo;
+	public int CurrentAmmo => _currentAmmo;
+	public int TotalAmmo => _totalAmmo;
 	public bool IsEmptyAmmo => _currentAmmo == 0;
 	public bool IsReloading => _isReloading;
 
@@ -118,6 +119,7 @@ public class Gun : MonoBehaviour
 		_muzzleFlash.Play();
 	}
 
+	// 애니메이션 재생 속도 반환
 	public float OnReload()
 	{
 		if (_isReloading) return 0f;
