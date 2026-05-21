@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5413341856752737493}
-  - component: {fileID: 719847016278396546}
+  - component: {fileID: 433460311288403724}
   m_Layer: 0
   m_Name: Decal
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   - {fileID: 1861501465487114053}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &719847016278396546
+--- !u!114 &433460311288403724
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,12 +42,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6684206556858539493}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cdc5b48aa2fbc74890309c9a5c56a59, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b6aa7b01963b1f4f8a72910df833bc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _printLog: 0
   _lifeTime: 5
   _elapse: 0
-  _printLog: 0
 --- !u!1001 &6602594935942131161
 PrefabInstance:
   m_ObjectHideFlags: 0
