@@ -1,16 +1,31 @@
 using UnityEngine;
 
-public class EnemyBase : MonoBehaviour, IDamageable
+public class EnemyBase : PooledObject, IDamageable
 {
 	#region 인스펙터
 	[SerializeField] private float _currentHp;
+	[SerializeField] private float _moveSpeed = 5f;
 
-	[Header("디버그")]
-	[SerializeField] private bool _printLog;
+	[Header("공격")]
+	[SerializeField] private float _attackDamage = 5f;
+	[SerializeField] private float _attackInterval = 1.5f;
+	[SerializeField] private float _attackRange = 5f;
+	[SerializeField] private float _attackActionDuration = 0.8f;
+	[SerializeField] private float _hitPredelay;
 	#endregion
 
 	#region 인스펙터
 	private bool _isDead = false;
+	#endregion
+
+	#region 프로퍼티
+	public float MoveSpeed => _moveSpeed;
+	public float AttackDamage => _attackDamage;
+	public float AttackInterval => _attackInterval;
+	public float AttackRange => _attackRange;
+	public float AttackActionDuration => _attackActionDuration;
+	public float HitPredelay => _hitPredelay;
+	public bool IsDead => _isDead;
 	#endregion
 
 	public void TakeDamage(float damage)
@@ -37,5 +52,7 @@ public class EnemyBase : MonoBehaviour, IDamageable
 		{
 			Debug.Log($"[{name}] 사망");
 		}
+
+		ReturnToPool();
 	}
 }

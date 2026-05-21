@@ -100,9 +100,7 @@ public class Gun : MonoBehaviour
 		Vector3 toTarget = _toTarget = (targetPos - _firePoint.position).normalized;
 		if (Physics.Raycast(_firePoint.position, toTarget, out RaycastHit hit, _maxDistance, _targetLayer))
 		{
-			IDamageable target = hit.collider.GetComponent<IDamageable>();
-
-			if (target != null)
+			if (hit.collider.TryGetComponent(out IDamageable target))
 			{
 				target.TakeDamage(_damage);
 			}
