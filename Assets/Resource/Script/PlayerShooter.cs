@@ -41,7 +41,7 @@ public class PlayerShooter : MonoBehaviour
 
 	public event Action Fire; // 격발 이벤트
 	public event Action<float> Reload; // 장전 이벤트.
-	public event Action<int, int> AmmoChange; // 탄약 수 변화
+	public event Action<int, int> AmmoChange; // 현재 탄약, 잔여 탄약
 
 	private void Awake()
 	{
@@ -62,6 +62,7 @@ public class PlayerShooter : MonoBehaviour
 		if (_currentGun != null)
 		{
 			_currentGun.ReloadComplete += NotifyAmmoChanged;
+			NotifyAmmoChanged();
 		}
 	}
 

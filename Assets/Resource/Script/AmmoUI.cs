@@ -41,5 +41,6 @@ public class AmmoUI : MonoBehaviour
 		_totalAmmoText.text = totalAmmo.ToString();
 
 		_currentAmmoText.color = (currentAmmo == 0) ? Color.red : Color.white;
+		_totalAmmoText.color = (currentAmmo == 0 && totalAmmo == 0) ? Color.red : Color.white;
 	}
 }
