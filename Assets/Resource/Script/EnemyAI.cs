@@ -8,6 +8,7 @@ public class EnemyAI : MonoBehaviour
 	#region 인스펙터
 	[SerializeField] private EnemyBase _enemyBase;
 	[SerializeField] private NavMeshAgent _navMeshAgent;
+	[SerializeField] private EnemyAnimator _enemyAnimator;
 
 	[Header("타겟(플레이어)")]
 	[SerializeField] private Transform _targetTr;
@@ -32,7 +33,8 @@ public class EnemyAI : MonoBehaviour
 	private void Awake()
 	{
 		if (_navMeshAgent == null ||
-			_enemyBase == null)
+			_enemyBase == null ||
+			_enemyAnimator == null)
 		{
 			Debug.LogWarning($"[{name}] 인스펙터 null");
 			gameObject.SetActive(false);
@@ -40,13 +42,32 @@ public class EnemyAI : MonoBehaviour
 		}
 	}
 
-	public void Init(Transform targetTr)
+	private void SetTarget()
 	{
-		_targetTr = targetTr;
+		if (GameManager.Instance == null ||
+			GameManager.Instance.PlayerTr == null) return;
+
+		_targetTr = GameManager.Instance.PlayerTr;
+	}
+
+	private void OnEnable()
+	{
+		_navMeshAgent.enabled = true;
+		SetTarget();
+
+		if (_enemyBase != null)
+		{
+			_enemyBase.Dead += OnDead;
+		}
 	}
 
 	private void OnDisable()
 	{
+		if (_enemyBase != null)
+		{
+			_enemyBase.Dead -= OnDead;
+		}
+
 		if (_routine != null)
 		{
 			StopCoroutine(_routine);
@@ -81,6 +102,8 @@ public class EnemyAI : MonoBehaviour
 			TickRotateToTarget();
 			TryAttack();
 		}
+
+		UpdateMoveParam();
 	}
 
 	// 경로 재탐색
@@ -109,8 +132,10 @@ public class EnemyAI : MonoBehaviour
 	private void TryAttack()
 	{
 		if (_nextAttackTime > Time.time) return;
-
 		_nextAttackTime = Time.time + _enemyBase.AttackInterval;
+
+		_isAttacking = true;
+		_enemyAnimator.OnMove(0f);
 
 		// 이동 정지
 		_navMeshAgent.isStopped = true;
@@ -122,13 +147,11 @@ public class EnemyAI : MonoBehaviour
 			_routine = null;
 		}
 		_routine = StartCoroutine(Co_Attack());
-		
-		// _enemyAnimator.Attack();
 	}
 
 	private IEnumerator Co_Attack()
 	{
-		_isAttacking = true;
+		_enemyAnimator.OnAttack(); // 애니메이션 재생
 
 		// 선딜레이
 		float elasped = 0;
@@ -139,8 +162,13 @@ public class EnemyAI : MonoBehaviour
 		}
 
 		// 공격 처리
-		if (_enemyBase == null || _enemyBase.IsDead) yield break;
-		if (_toTarget == Vector3.zero) yield break;
+		if (_enemyBase == null || 
+			_enemyBase.IsDead ||
+			_toTarget == Vector3.zero)
+		{
+			_routine = null;
+			yield break;
+		}
 
 		if (Vector3.SqrMagnitude(_toTarget) <= _sqrAttackRange)
 		{
@@ -166,5 +194,23 @@ public class EnemyAI : MonoBehaviour
 		}
 
 		_isAttacking = false; // 이동 정지 해제
+		_routine = null;
+	}
+
+	private void UpdateMoveParam()
+	{
+		if (_enemyBase == null ||
+			_enemyBase.IsDead ||
+			_navMeshAgent == null ||
+			_enemyAnimator == null) return;
+
+		// 속도 벡터(velocity) 길이 = 현재 이동 속도
+		float sqrMoveSpeed = _navMeshAgent.velocity.sqrMagnitude;
+		_enemyAnimator.OnMove(sqrMoveSpeed);
+	}
+
+	private void OnDead()
+	{
+		_navMeshAgent.enabled = false;
 	}
 }

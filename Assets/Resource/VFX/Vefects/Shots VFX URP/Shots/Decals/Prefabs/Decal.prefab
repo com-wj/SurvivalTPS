@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _printLog: 0
   _lifeTime: 5
-  _elapse: 0
+  _timerAutoStart: 1
 --- !u!1001 &6602594935942131161
 PrefabInstance:
   m_ObjectHideFlags: 0

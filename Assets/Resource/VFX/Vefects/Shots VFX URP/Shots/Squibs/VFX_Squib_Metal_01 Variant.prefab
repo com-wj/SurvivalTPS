@@ -92,4 +92,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _printLog: 0
   _lifeTime: 1
-  _elapse: 0
+  _timerAutoStart: 1

@@ -65,9 +65,9 @@ public class PlayerAnimator : MonoBehaviour
 		_hashMoveX = Animator.StringToHash(_paramMoveX);
 		_hashMoveY = Animator.StringToHash(_paramMoveY);
 
-		_hasJumpParam = !string.IsNullOrEmpty(_paramJump) ||
-			!string.IsNullOrEmpty(_paramIsGrounded) || 
-			!string.IsNullOrEmpty(_paramVerticalVel) ||
+		_hasJumpParam = !string.IsNullOrEmpty(_paramJump) &&
+			!string.IsNullOrEmpty(_paramIsGrounded) &&
+			!string.IsNullOrEmpty(_paramVerticalVel) &&
 			!string.IsNullOrEmpty(_tagHardLanding)
 			;
 		if (_hasJumpParam)
@@ -78,9 +78,9 @@ public class PlayerAnimator : MonoBehaviour
 			_hashHardLand = Animator.StringToHash(_tagHardLanding);
 		}
 
-		_hasAimParam = !string.IsNullOrEmpty(_paramAim) ||
-			!string.IsNullOrEmpty(_paramFire) ||
-			!string.IsNullOrEmpty(_paramReload) ||
+		_hasAimParam = !string.IsNullOrEmpty(_paramAim) &&
+			!string.IsNullOrEmpty(_paramFire) &&
+			!string.IsNullOrEmpty(_paramReload) &&
 			!string.IsNullOrEmpty(_paramReloadSpeed);
 		if (_hasAimParam)
 		{

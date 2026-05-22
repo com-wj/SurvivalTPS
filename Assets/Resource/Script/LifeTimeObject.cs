@@ -1,16 +1,16 @@
 using System.Collections;
 using UnityEngine;
 
-public class LifeTimeObejct : PooledObject
+public class LifeTimeObject : PooledObject
 {
 	#region 인스펙터
-	[Header("수명")]
-	[SerializeField] private float _lifeTime = 1.0f;
-	[SerializeField] private float _elapse; // 경과 시간
+	[Header("소멸 타이머")]
+	[SerializeField] protected float _lifeTime = 1.0f;
+	[SerializeField] protected bool _timerAutoStart = false;
 	#endregion
 
 	#region 내부 변수
-	private Coroutine _routine;
+	protected Coroutine _routine;
 	#endregion
 
 	protected override void OnDisable()
@@ -22,13 +22,20 @@ public class LifeTimeObejct : PooledObject
 			StopCoroutine(_routine);
 			_routine = null;
 		}
-		_elapse = 0f;
 	}
 
 	public override void Init(PooledObject origin)
 	{
 		base.Init(origin);
 
+		if (_timerAutoStart)
+		{
+			StartPoolingTimer();
+		}
+	}
+
+	protected virtual void StartPoolingTimer()
+	{
 		if (_routine != null)
 		{
 			StopCoroutine(_routine);
@@ -37,16 +44,16 @@ public class LifeTimeObejct : PooledObject
 		_routine = StartCoroutine(Co_LifeTimer(_lifeTime));
 	}
 
-	private IEnumerator Co_LifeTimer(float lifetime)
+	protected virtual IEnumerator Co_LifeTimer(float lifetime)
 	{
-		_elapse = 0f;
-		while (_elapse < lifetime)
+		float elapsed = 0f;
+		while (elapsed < lifetime)
 		{
-			_elapse += Time.deltaTime;
+			elapsed += Time.deltaTime;
 			yield return null;
 		}
 
-		ReturnToPool();
 		_routine = null;
+		ReturnToPool();
 	}
 }

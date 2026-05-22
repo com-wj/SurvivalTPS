@@ -137,10 +137,10 @@ public class Gun : MonoBehaviour
 
 	private IEnumerator Co_Reloading()
 	{
-		float elasped = 0;
-		while (elasped < _reloadInterval)
+		float elapsed = 0;
+		while (elapsed < _reloadInterval)
 		{
-			elasped += Time.deltaTime;
+			elapsed += Time.deltaTime;
 			yield return null;
 		}
 
@@ -152,8 +152,11 @@ public class Gun : MonoBehaviour
 
 		_isReloading = false;
 		ReloadComplete?.Invoke();
+
+		_routine = null;
 	}
 
+#if UNITY_EDITOR
 	private void OnDrawGizmos()
 	{
 		if (!_drawRay) return;
@@ -161,4 +164,5 @@ public class Gun : MonoBehaviour
 		Gizmos.color = Color.yellow;
 		Gizmos.DrawRay(_firePoint.position, _toTarget * _maxDistance);
 	}
+#endif
 }

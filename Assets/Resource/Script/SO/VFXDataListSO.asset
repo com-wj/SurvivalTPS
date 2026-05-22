@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _vfxEntries:
   - key: Creature
-    prefab: {fileID: -8919570888270625182, guid: 035e228f2a9f84542920813d0d8422c5,
+    prefab: {fileID: 1391240661326694043, guid: 035e228f2a9f84542920813d0d8422c5,
       type: 3}
   - key: Metal
-    prefab: {fileID: 3668686782022185218, guid: 5d516f131d0752b489f89fab2217f08b,
+    prefab: {fileID: 3696996248179556943, guid: 5d516f131d0752b489f89fab2217f08b,
       type: 3}
   - key: Concrete
-    prefab: {fileID: -7510609911735352621, guid: d805a03536620f5439ac212ac2f1fd99,
+    prefab: {fileID: -7193816826717854681, guid: d805a03536620f5439ac212ac2f1fd99,
       type: 3}
   - key: Decal
-    prefab: {fileID: 719847016278396546, guid: bbb4906bec0161b4aa76ddc4361639ee, type: 3}
+    prefab: {fileID: 433460311288403724, guid: bbb4906bec0161b4aa76ddc4361639ee, type: 3}
