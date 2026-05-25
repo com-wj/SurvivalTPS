@@ -200,6 +200,8 @@ MonoBehaviour:
   _paramIsGrounded: bGrounded
   _paramAim: bAim
   _paramFire: tFire
+  _paramReload: tReload
+  _paramReloadSpeed: fReloadSpeed
   _tagHardLanding: HardLanding
   _speedDamp: 0.12
 --- !u!114 &2498472057129554550
@@ -220,8 +222,9 @@ MonoBehaviour:
   _aimTarget: {fileID: 0}
   _targetLayer:
     serializedVersion: 2
-    m_Bits: 187
+    m_Bits: 264
   _maxDistance: 100
+  _reloadKey: 114
 --- !u!1 &4327681119966525622
 GameObject:
   m_ObjectHideFlags: 0
@@ -1619,6 +1622,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1d2feac2f18a5d146b71c8d4a478e5dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 968760396212820420, guid: 1d2feac2f18a5d146b71c8d4a478e5dc,
         type: 3}
       propertyPath: m_Layer
@@ -1838,6 +1846,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5128063986421979777, guid: 1d2feac2f18a5d146b71c8d4a478e5dc,
+        type: 3}
+      propertyPath: m_AABB.m_Center.x
+      value: 0.6014344
+      objectReference: {fileID: 0}
+    - target: {fileID: 5128063986421979777, guid: 1d2feac2f18a5d146b71c8d4a478e5dc,
+        type: 3}
+      propertyPath: m_AABB.m_Center.y
+      value: -0.011391282
+      objectReference: {fileID: 0}
+    - target: {fileID: 5128063986421979777, guid: 1d2feac2f18a5d146b71c8d4a478e5dc,
+        type: 3}
+      propertyPath: m_AABB.m_Center.z
+      value: 0.017482549
+      objectReference: {fileID: 0}
+    - target: {fileID: 5128063986421979777, guid: 1d2feac2f18a5d146b71c8d4a478e5dc,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 0.4794628
+      objectReference: {fileID: 0}
+    - target: {fileID: 5128063986421979777, guid: 1d2feac2f18a5d146b71c8d4a478e5dc,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 0.25875622
+      objectReference: {fileID: 0}
+    - target: {fileID: 5128063986421979777, guid: 1d2feac2f18a5d146b71c8d4a478e5dc,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.35951424
       objectReference: {fileID: 0}
     - target: {fileID: 5163697831205384224, guid: 1d2feac2f18a5d146b71c8d4a478e5dc,
         type: 3}

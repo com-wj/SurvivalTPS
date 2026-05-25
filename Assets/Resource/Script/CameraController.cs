@@ -41,6 +41,8 @@ public class CameraController : MonoBehaviour
 
 	private void LateUpdate()
 	{
+		if (Cursor.lockState != CursorLockMode.Locked) return; // 일시 정지면 반환
+
 		float mx = Input.GetAxis("Mouse X") * _sensitivity;
 		float my = Input.GetAxis("Mouse Y") * _sensitivity;
 

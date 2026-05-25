@@ -32,7 +32,11 @@ public class PlayerShooter : MonoBehaviour
 	{
 		get
 		{
-			if (_currentGun != null && _currentGun.IsReloading)
+			if (
+				_currentGun == null ||
+				_currentGun != null && _currentGun.IsReloading ||
+				Cursor.lockState != CursorLockMode.Locked
+				)
 				return false;
 			
 			return true;
