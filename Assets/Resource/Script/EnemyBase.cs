@@ -68,7 +68,7 @@ public class EnemyBase : LifeTimeObject, IDamageable
 			Debug.Log($"[{name}] {damage} 피해 입음. 남은 체력:{_currentHp}");
 		}
 
-		if (_currentHp < 0)
+		if (_currentHp <= 0)
 		{
 			_currentHp = 0;
 			Die();

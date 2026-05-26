@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-	[SerializeField] private Transform _playerTr;
+	[SerializeField] private PlayerBase _playerBase;
 
-	public Transform PlayerTr => _playerTr;
+	public PlayerBase PlayerBase => _playerBase;
 
 	protected override void Awake()
 	{
 		base.Awake();
-		if (_playerTr == null)
+		if (_playerBase == null)
 		{
 			Debug.LogWarning($"[{name}] 인스펙터 null");
 			gameObject.SetActive(false);

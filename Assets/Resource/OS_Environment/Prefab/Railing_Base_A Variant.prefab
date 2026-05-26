@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1174467342700960, guid: 625b489b8251a1046a9b980c46ec6587, type: 3}
       propertyPath: m_TagString
-      value: Creature
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 1381457751570986, guid: 625b489b8251a1046a9b980c46ec6587, type: 3}
       propertyPath: m_Layer
@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1381457751570986, guid: 625b489b8251a1046a9b980c46ec6587, type: 3}
       propertyPath: m_TagString
-      value: Creature
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 1738242751146714, guid: 625b489b8251a1046a9b980c46ec6587, type: 3}
       propertyPath: m_Layer
@@ -34,7 +34,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1738242751146714, guid: 625b489b8251a1046a9b980c46ec6587, type: 3}
       propertyPath: m_TagString
-      value: Creature
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 4436822787432496, guid: 625b489b8251a1046a9b980c46ec6587, type: 3}
       propertyPath: m_LocalPosition.x

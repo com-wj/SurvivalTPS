@@ -10,7 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1081428585312286, guid: 67bcdf99c80f9fe40bed645a3d96b3fb, type: 3}
       propertyPath: m_Name
-      value: Floor_Base_Steps_A
+      value: Floor_Base_Steps_A Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1081428585312286, guid: 67bcdf99c80f9fe40bed645a3d96b3fb, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1081428585312286, guid: 67bcdf99c80f9fe40bed645a3d96b3fb, type: 3}
+      propertyPath: m_TagString
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 4431008436633550, guid: 67bcdf99c80f9fe40bed645a3d96b3fb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -51,6 +59,16 @@ PrefabInstance:
     - target: {fileID: 4431008436633550, guid: 67bcdf99c80f9fe40bed645a3d96b3fb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64081535054574540, guid: 67bcdf99c80f9fe40bed645a3d96b3fb,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7935024823417636062, guid: 67bcdf99c80f9fe40bed645a3d96b3fb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

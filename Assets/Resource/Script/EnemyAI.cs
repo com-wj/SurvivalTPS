@@ -11,6 +11,7 @@ public class EnemyAI : MonoBehaviour
 	[SerializeField] private EnemyAnimator _enemyAnimator;
 
 	[Header("타겟(플레이어)")]
+	[SerializeField] private PlayerBase _targetBase;
 	[SerializeField] private Transform _targetTr;
 
 	[Header("회전 속도")]
@@ -45,9 +46,10 @@ public class EnemyAI : MonoBehaviour
 	private void SetTarget()
 	{
 		if (GameManager.Instance == null ||
-			GameManager.Instance.PlayerTr == null) return;
+			GameManager.Instance.PlayerBase == null) return;
 
-		_targetTr = GameManager.Instance.PlayerTr;
+		_targetBase = GameManager.Instance.PlayerBase;
+		_targetTr = _targetBase.transform;
 	}
 
 	private void OnEnable()
@@ -73,6 +75,7 @@ public class EnemyAI : MonoBehaviour
 			StopCoroutine(_routine);
 			_routine = null;
 		}
+		_targetBase = null;
 		_targetTr = null;
 
 		_isAttacking = false;
@@ -89,18 +92,28 @@ public class EnemyAI : MonoBehaviour
 
 		if (_isAttacking) return;
 
-		if (_navMeshAgent.isStopped) // 공격 상태가 아니면 정지 해제
+		if (_targetBase != null && 
+			!_targetBase.IsDead) // 플레이어가 살아있으면
 		{
-			_navMeshAgent.isStopped = false;
+			if (_navMeshAgent.isStopped) // 공격 상태가 아니면 정지 해제
+			{
+				_navMeshAgent.isStopped = false;
+			}
+
+			RefreshDestination();
+
+			if (!_navMeshAgent.pathPending &&
+				_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
+			{
+				TickRotateToTarget();
+				TryAttack();
+			}
 		}
-
-		RefreshDestination();
-
-		if (!_navMeshAgent.pathPending &&
-			_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
+		else
 		{
-			TickRotateToTarget();
-			TryAttack();
+			// 이동 정지
+			_navMeshAgent.isStopped = true;
+			_navMeshAgent.velocity = Vector3.zero;
 		}
 
 		UpdateMoveParam();
@@ -164,8 +177,10 @@ public class EnemyAI : MonoBehaviour
 		// 공격 처리
 		if (_enemyBase == null || 
 			_enemyBase.IsDead ||
+			_targetBase.IsDead ||
 			_toTarget == Vector3.zero)
 		{
+			_isAttacking = false;
 			_routine = null;
 			yield break;
 		}
