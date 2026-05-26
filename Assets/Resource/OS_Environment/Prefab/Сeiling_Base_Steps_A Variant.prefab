@@ -10,7 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1218180289480384, guid: bd2de7871c6e9fe4fbd6ae7dc86f7b67, type: 3}
       propertyPath: m_Name
-      value: "\u0421eiling_Base_Steps_A"
+      value: "\u0421eiling_Base_Steps_A Variant"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1218180289480384, guid: bd2de7871c6e9fe4fbd6ae7dc86f7b67, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1218180289480384, guid: bd2de7871c6e9fe4fbd6ae7dc86f7b67, type: 3}
+      propertyPath: m_TagString
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 4633368105289990, guid: bd2de7871c6e9fe4fbd6ae7dc86f7b67, type: 3}
       propertyPath: m_LocalPosition.x

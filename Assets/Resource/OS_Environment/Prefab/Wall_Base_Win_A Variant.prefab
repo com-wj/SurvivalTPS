@@ -10,7 +10,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1022363907220162, guid: 5ed7961851f74e242a0260333116b27e, type: 3}
       propertyPath: m_Name
-      value: Wall_Base_Win_A
+      value: Wall_Base_Win_A Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1022363907220162, guid: 5ed7961851f74e242a0260333116b27e, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1022363907220162, guid: 5ed7961851f74e242a0260333116b27e, type: 3}
+      propertyPath: m_TagString
+      value: Concrete
+      objectReference: {fileID: 0}
+    - target: {fileID: 1127361739848940, guid: 5ed7961851f74e242a0260333116b27e, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1127361739848940, guid: 5ed7961851f74e242a0260333116b27e, type: 3}
+      propertyPath: m_TagString
+      value: Concrete
+      objectReference: {fileID: 0}
+    - target: {fileID: 1778474144916234, guid: 5ed7961851f74e242a0260333116b27e, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1778474144916234, guid: 5ed7961851f74e242a0260333116b27e, type: 3}
+      propertyPath: m_TagString
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 4167575584100154, guid: 5ed7961851f74e242a0260333116b27e, type: 3}
       propertyPath: m_LocalPosition.x

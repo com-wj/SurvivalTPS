@@ -10,7 +10,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1341999893262120, guid: 99b72b42e78ac1f4ca614a7117d909bd, type: 3}
       propertyPath: m_Name
-      value: Railing_TwoThirds_A
+      value: Railing_TwoThirds_A Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341999893262120, guid: 99b72b42e78ac1f4ca614a7117d909bd, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341999893262120, guid: 99b72b42e78ac1f4ca614a7117d909bd, type: 3}
+      propertyPath: m_TagString
+      value: Concrete
+      objectReference: {fileID: 0}
+    - target: {fileID: 1363747932557020, guid: 99b72b42e78ac1f4ca614a7117d909bd, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1363747932557020, guid: 99b72b42e78ac1f4ca614a7117d909bd, type: 3}
+      propertyPath: m_TagString
+      value: Concrete
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779013796222296, guid: 99b72b42e78ac1f4ca614a7117d909bd, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779013796222296, guid: 99b72b42e78ac1f4ca614a7117d909bd, type: 3}
+      propertyPath: m_TagString
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 4406969050279764, guid: 99b72b42e78ac1f4ca614a7117d909bd, type: 3}
       propertyPath: m_LocalPosition.x

@@ -10,7 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1230643474412118, guid: 95230b848d104ff45936cf111b373903, type: 3}
       propertyPath: m_Name
-      value: Wall_Base_Steps_A
+      value: Wall_Base_Steps_A Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1230643474412118, guid: 95230b848d104ff45936cf111b373903, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1230643474412118, guid: 95230b848d104ff45936cf111b373903, type: 3}
+      propertyPath: m_TagString
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 4914978248524304, guid: 95230b848d104ff45936cf111b373903, type: 3}
       propertyPath: m_LocalPosition.x
