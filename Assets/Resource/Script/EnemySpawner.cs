@@ -13,12 +13,13 @@ public class EnemySpawner : Singleton<EnemySpawner>
 	[SerializeField] private bool _drawSpawnPointGizmos = false;
 	[SerializeField] private bool _forceSpawnOnce = false;
 	[SerializeField] private PooledObject _forceSpawnPrefab;
+
+	[Header("활성화된 적")]
+	[SerializeField] private List<PooledObject> _aliveEnemyList = new List<PooledObject>();
 	#endregion
 
 	#region 내부 변수
 	private Coroutine _routine;
-
-	[SerializeField] private readonly List<PooledObject> _aliveEnemyList = new List<PooledObject>();
 	#endregion
 
 	protected override void Awake()
@@ -31,6 +32,7 @@ public class EnemySpawner : Singleton<EnemySpawner>
 			gameObject.SetActive(false);
 			return;
 		}
+		_aliveEnemyList.Clear();
 	}
 
 	/*
@@ -100,7 +102,7 @@ public class EnemySpawner : Singleton<EnemySpawner>
 
 			if (_printLog)
 			{
-				Debug.Log($"[{name}] ({prefab}) {SpawnCount}마리 생성");
+				Debug.Log($"[{name}] ({prefab.name}) {UnitCountPerSpawn}마리 생성");
 			}
 
 			float elapsed = 0;
@@ -149,7 +151,7 @@ public class EnemySpawner : Singleton<EnemySpawner>
 
 		if (_printLog)
 		{
-			Debug.Log($"[{name}] 라운드 클리어. 모든 몹 클리어.");
+			Debug.Log($"[{name}] 모든 몹 클리어.");
 		}
 
 		for (int i = _aliveEnemyList.Count - 1; i >= 0; i--)

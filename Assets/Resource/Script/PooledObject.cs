@@ -1,7 +1,5 @@
-using System;
 using UnityEngine;
 
-[Serializable]
 public class PooledObject : MonoBehaviour
 {
 	#region 인스펙터

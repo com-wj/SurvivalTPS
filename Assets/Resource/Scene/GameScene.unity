@@ -13441,6 +13441,7 @@ MonoBehaviour:
   _forceSpawnOnce: 0
   _forceSpawnPrefab: {fileID: 6449101514488936828, guid: 8fcabdb4f6502564a841008c79d141aa,
     type: 3}
+  _aliveEnemyList: []
 --- !u!4 &370647950
 Transform:
   m_ObjectHideFlags: 0
@@ -85041,8 +85042,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 117193504}
   - {fileID: 1212583958}
+  - {fileID: 117193504}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -89012,8 +89013,8 @@ SceneRoots:
   - {fileID: 50633993}
   - {fileID: 1707869245}
   - {fileID: 1060071166}
-  - {fileID: 1796717376}
   - {fileID: 1588487298}
+  - {fileID: 1796717376}
   - {fileID: 2056924010}
   - {fileID: 214232069}
   - {fileID: 1601713260}
