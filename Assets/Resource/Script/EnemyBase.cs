@@ -75,17 +75,29 @@ public class EnemyBase : LifeTimeObject, IDamageable
 		}
 	}
 
-	protected virtual void Die()
+	public virtual void Die(bool isPlayerKill = true)
 	{
 		if (_isDead) return;
-
 		_isDead = true;
 
 		if (_printLog)
 		{
 			Debug.Log($"[{name}] 사망");
 		}
+
 		_collider.enabled = false; // 사망 시 물리 충돌 제거
+
+		if (isPlayerKill)
+		{
+			if (ScoreManager.Instance != null)
+			{
+				ScoreManager.Instance.AddKill();
+			}
+			if (EnemySpawner.Instance != null)
+			{
+				EnemySpawner.Instance.RemoveEnemyFromList(this);
+			}
+		}
 
 		Dead?.Invoke();
 

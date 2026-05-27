@@ -1,7 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawner : Singleton<EnemySpawner>
 {
 	#region 인스펙터
 	[Header("스폰 포인트")]
@@ -16,10 +17,13 @@ public class EnemySpawner : MonoBehaviour
 
 	#region 내부 변수
 	private Coroutine _routine;
+
+	[SerializeField] private readonly List<PooledObject> _aliveEnemyList = new List<PooledObject>();
 	#endregion
 
-	private void Awake()
+	protected override void Awake()
 	{
+		base.Awake();
 		if (_spawnPoints == null ||
 			_spawnPoints.Length == 0)
 		{
@@ -29,12 +33,14 @@ public class EnemySpawner : MonoBehaviour
 		}
 	}
 
+	/*
 	// For test
 	private void Start()
 	{
 		if (_forceSpawnPrefab == null) return;
 		StartSpawn(_forceSpawnPrefab, 6);
 	}
+	*/
 
 	private void OnDisable()
 	{
@@ -120,9 +126,48 @@ public class EnemySpawner : MonoBehaviour
 
 		PooledObject obj = PoolManager.Instance.Pop(prefab, spawnPoint.position, Quaternion.identity);
 		obj.Init(prefab);
+
+		_aliveEnemyList.Add(obj);
+	}
+
+	public void RemoveEnemyFromList(PooledObject obj)
+	{
+		_aliveEnemyList.Remove(obj); // 자동으로 방어됨.
+	}
+
+	public void StopAndClearEnemies()
+	{
+		if (_routine != null)
+		{
+			StopCoroutine(_routine);
+			_routine = null;
+			if (_printLog)
+			{
+				Debug.Log($"[{name}] 생성 중단.");
+			}
+		}
+
+		if (_printLog)
+		{
+			Debug.Log($"[{name}] 라운드 클리어. 모든 몹 클리어.");
+		}
+
+		for (int i = _aliveEnemyList.Count - 1; i >= 0; i--)
+		{
+			PooledObject pobj = _aliveEnemyList[i];
+			if (pobj == null || !pobj.gameObject.activeSelf) continue;
+
+			EnemyBase enemy = pobj as EnemyBase;
+			if (enemy == null) continue;
+
+			enemy.Die(false);
+		}
+
+		_aliveEnemyList.Clear();
 	}
 
 #if UNITY_EDITOR
+	// 스폰 포인트 표시
 	private void OnDrawGizmos()
 	{
 		if (!_drawSpawnPointGizmos) return;
