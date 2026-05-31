@@ -15,6 +15,9 @@ public class CameraController : MonoBehaviour
 	[Header("디버그")]
 	[SerializeField] private bool _mouseVisible = false;
 	[SerializeField] private bool _printLog = false;
+
+	[Header("의존성")]
+	[SerializeField] private PlayerBase _playerBase;
 	#endregion
 
 	#region 내부 변수
@@ -27,6 +30,13 @@ public class CameraController : MonoBehaviour
 
 	private void Awake()
 	{
+		if (_playerBase == null)
+		{
+			Debug.LogWarning($"[{name}] 인스펙터 null 감지");
+			gameObject.SetActive(false);
+			return;
+		}
+
 		if (!_mouseVisible)
 		{
 			Cursor.visible = false;
@@ -42,6 +52,8 @@ public class CameraController : MonoBehaviour
 	private void LateUpdate()
 	{
 		if (Cursor.lockState != CursorLockMode.Locked) return; // 일시 정지면 반환
+
+		if (_playerBase.IsDead) return;
 
 		float mx = Input.GetAxis("Mouse X") * _sensitivity;
 		float my = Input.GetAxis("Mouse Y") * _sensitivity;

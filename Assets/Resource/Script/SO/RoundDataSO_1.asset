@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91913d78e81b2bf4e936a2be395d3be2, type: 3}
+  m_Name: RoundDataSO_1
+  m_EditorClassIdentifier: 
+  _name: 1round
+  _waveDatas:
+  - {fileID: 11400000, guid: 1724ba16e59eb1c46a6607a445419081, type: 2}
+  - {fileID: 11400000, guid: 6ab47bb5c2e65f144b61a186177ed3cb, type: 2}
+  - {fileID: 11400000, guid: 3f1718d9d4bb25545a23631bb3333c7d, type: 2}
+  - {fileID: 11400000, guid: 333660ed06771bf4c86238eddcb602fb, type: 2}
+  - {fileID: 11400000, guid: a49d3b2f4db82624ca63bd97b386cc75, type: 2}
+  - {fileID: 11400000, guid: cc020df03c0db8b448e4e31fa8e5cb0e, type: 2}
+  - {fileID: 11400000, guid: 4141bdc79a26c0048a0cbbdddcf63375, type: 2}
+  - {fileID: 11400000, guid: 5b3ca6aac452174478c8bc0eb50c97b5, type: 2}
+  - {fileID: 11400000, guid: ad5f7a2a52f93034d935fb1e122cf241, type: 2}
+  - {fileID: 11400000, guid: 07c7be05b760e2b4580d3a63cd82db30, type: 2}
+  - {fileID: 11400000, guid: c0fb0cfece5b1314aa0cea96919bca9a, type: 2}
+  - {fileID: 11400000, guid: bcddcc99c7cdcff418ec50bba1df62a3, type: 2}

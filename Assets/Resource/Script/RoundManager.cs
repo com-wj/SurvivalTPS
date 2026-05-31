@@ -1,4 +1,4 @@
-using TMPro;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class RoundManager : Singleton<RoundManager>
@@ -10,14 +10,12 @@ public class RoundManager : Singleton<RoundManager>
 	[Header("적 스포너")]
 	[SerializeField] private EnemySpawner _enemySpawner;
 
-	[Header("스폰 정보")]
-	[SerializeField] private PooledObject _prefab;
-	[SerializeField] private int _unitCountPerSpawn;
-	[SerializeField] private float _spawnInterval;
-	[SerializeField] private int _spawnCount;
+	[Header("라운드 데이터")]
+	[SerializeField] private List<RoundDataSO> _roundDatas = new List<RoundDataSO>();
 
 	[Header("의존성")]
 	[SerializeField] private ScoreManager _scoreManager;
+	[SerializeField] private WaveManager _waveManager;
 
 	[Header("디버그")]
 	[SerializeField] private bool _printLog = false;
@@ -26,7 +24,8 @@ public class RoundManager : Singleton<RoundManager>
 	protected override void Awake()
 	{
 		base.Awake();
-		if (_prefab == null)
+		if (_roundDatas == null ||
+			_roundDatas.Count == 0)
 		{
 			Debug.LogWarning($"[{name}] 인스펙터 null");
 			gameObject.SetActive(false);
@@ -65,21 +64,30 @@ public class RoundManager : Singleton<RoundManager>
 			_scoreManager = ScoreManager.Instance;
 			_scoreManager.KillCountChanged += CheckClearCondition;
 		}
+		if (_waveManager == null)
+		{
+			_waveManager = WaveManager.Instance;
+		}
 
-		_enemySpawner.StartSpawn(_prefab, _unitCountPerSpawn, _spawnInterval, _spawnCount);
+		_waveManager.InitWaveData(_roundDatas[0].WaveDatas);
 	}
 
 	private void CheckClearCondition(int killCount)
 	{
 		if (killCount >= _targetKillCount)
 		{
-			if (_printLog)
-			{
-				Debug.Log($"[{name}] 라운드 클리어.");
-			}
-
-			_scoreManager.ResetKillCount();
-			_enemySpawner.StopAndClearEnemies();
+			//OnRoundClear();
 		}
+	}
+
+	public void OnRoundClear()
+	{
+		if (_printLog)
+		{
+			Debug.Log($"[{name}] 라운드 클리어.");
+		}
+
+		_scoreManager.ResetKillCount();
+		_enemySpawner.StopAndClearEnemies();
 	}
 }

@@ -8,6 +8,7 @@ public class PlayerShooter : MonoBehaviour
 {
 	#region 인스펙터
 	[SerializeField] private Camera _mainCamera;
+	[SerializeField] private PlayerBase _playerBase;
 	[SerializeField] private PlayerController _playerController;
 	[SerializeField] private Gun _currentGun; // 장착한 총기
 
@@ -35,7 +36,8 @@ public class PlayerShooter : MonoBehaviour
 			if (
 				_currentGun == null ||
 				_currentGun != null && _currentGun.IsReloading ||
-				Cursor.lockState != CursorLockMode.Locked
+				Cursor.lockState != CursorLockMode.Locked ||
+				_playerBase != null && _playerBase.IsDead
 				)
 				return false;
 			
@@ -55,6 +57,7 @@ public class PlayerShooter : MonoBehaviour
 		}
 
 		if (_mainCamera == null ||
+			_playerBase == null ||
 			_aimTarget == null ||
 			_playerController == null)
 		{

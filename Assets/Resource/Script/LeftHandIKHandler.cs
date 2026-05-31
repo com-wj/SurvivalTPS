@@ -3,14 +3,17 @@ using UnityEngine;
 public class LeftHandIKHandler : MonoBehaviour
 {
 	#region 인스펙터
+	[Header("의존성")]
 	[SerializeField] private Animator _animator;
 	[SerializeField] private Gun _gun;
+	[SerializeField] private PlayerBase _playerBase;
 	#endregion
 
 	private void Awake()
 	{
 		if (_animator == null ||
-			_gun == null)
+			_gun == null ||
+			_playerBase == null)
 		{
 			Debug.LogWarning($"[{name}] 인스펙터 null 감지");
 			gameObject.SetActive(false);
@@ -31,6 +34,8 @@ public class LeftHandIKHandler : MonoBehaviour
 		if (_gun == null) return;
 
 		if (_gun.IsReloading) return;
+
+		if (_playerBase.IsDead) return;
 
 		Transform targetTr = _gun.LeftHandMount;
 

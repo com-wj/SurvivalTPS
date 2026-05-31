@@ -58,7 +58,7 @@ public class EnemyBase : LifeTimeObject, IDamageable
 		_isDead = false;
 	}
 
-	public void TakeDamage(float damage)
+	public void TakeDamage(float damage, EDamageType damageType)
 	{
 		if (_isDead) return;
 

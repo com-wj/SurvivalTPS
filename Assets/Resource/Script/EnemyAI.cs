@@ -17,6 +17,9 @@ public class EnemyAI : MonoBehaviour
 	[Header("회전 속도")]
 	[SerializeField] private float _rotateSharpness = 8.0f;
 
+	[Header("공격 종류")]
+	[SerializeField] private EDamageType _damageType;
+
 	[Header("디버그")]
 	[SerializeField] private bool _printLog = false;
 	#endregion
@@ -41,6 +44,11 @@ public class EnemyAI : MonoBehaviour
 			gameObject.SetActive(false);
 			return;
 		}
+	}
+
+	private void Start()
+	{
+		_navMeshAgent.speed = _enemyBase.MoveSpeed;
 	}
 
 	private void SetTarget()
@@ -106,7 +114,7 @@ public class EnemyAI : MonoBehaviour
 				_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
 			{
 				TickRotateToTarget();
-				TryAttack();
+				TryAttack(_damageType);
 			}
 		}
 		else
@@ -142,7 +150,7 @@ public class EnemyAI : MonoBehaviour
 		transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, t);
 	}
 
-	private void TryAttack()
+	private void TryAttack(EDamageType damageType)
 	{
 		if (_nextAttackTime > Time.time) return;
 		_nextAttackTime = Time.time + _enemyBase.AttackInterval;
@@ -159,10 +167,10 @@ public class EnemyAI : MonoBehaviour
 			StopCoroutine(_routine);
 			_routine = null;
 		}
-		_routine = StartCoroutine(Co_Attack());
+		_routine = StartCoroutine(Co_Attack(damageType));
 	}
 
-	private IEnumerator Co_Attack()
+	private IEnumerator Co_Attack(EDamageType damageType)
 	{
 		_enemyAnimator.OnAttack(); // 애니메이션 재생
 
@@ -189,7 +197,7 @@ public class EnemyAI : MonoBehaviour
 		{
 			if (_targetTr.TryGetComponent(out IDamageable target))
 			{
-				target.TakeDamage(_enemyBase.AttackDamage);
+				target.TakeDamage(_enemyBase.AttackDamage, damageType);
 			}
 
 			if (_printLog)

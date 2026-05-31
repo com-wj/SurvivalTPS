@@ -19,6 +19,7 @@ public class PlayerBase : MonoBehaviour, IDamageable
 
 	public event Action<float, float> HPChanged; // 현재, 전체 체력
 	public event Action Dead;
+	public event Action<EDamageType> DeadByCause;
 
 	private void Awake()
 	{
@@ -30,7 +31,16 @@ public class PlayerBase : MonoBehaviour, IDamageable
 		HPChanged?.Invoke(_currentHp, _maxHp);
 	}
 
-	public void TakeDamage(float damage)
+	// For Test
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.F2))
+		{
+			Die(EDamageType.Normal);
+		}
+	}
+
+	public void TakeDamage(float damage, EDamageType damageType)
 	{
 		if (_isDead) return;
 
@@ -40,16 +50,16 @@ public class PlayerBase : MonoBehaviour, IDamageable
 			Debug.Log($"[{name}] {damage} 피해 입음. 남은 체력:{_currentHp}");
 		}
 
-		HPChanged?.Invoke(_currentHp, _maxHp);
-
 		if (_currentHp <= 0)
 		{
 			_currentHp = 0;
-			Die();
+			Die(damageType);
 		}
+
+		HPChanged?.Invoke(_currentHp, _maxHp);
 	}
 
-	private void Die()
+	private void Die(EDamageType damageType)
 	{
 		if (_isDead) return;
 
@@ -59,7 +69,8 @@ public class PlayerBase : MonoBehaviour, IDamageable
 		{
 			Debug.Log($"[{name}] 사망");
 		}
-		
+
+		DeadByCause?.Invoke(damageType);
 		Dead?.Invoke();
 	}
 }

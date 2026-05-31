@@ -4,6 +4,7 @@ public class PlayerAnimator : MonoBehaviour
 {
 	#region 인스펙터
 	[SerializeField] private Animator _animator;
+	[SerializeField] private PlayerBase _playerBase;
 	[SerializeField] private PlayerController _playerController;
 	[SerializeField] private PlayerShooter _playerShooter;
 
@@ -24,6 +25,10 @@ public class PlayerAnimator : MonoBehaviour
 	// 재장전
 	[SerializeField] private string _paramReload = "tReload";
 	[SerializeField] private string _paramReloadSpeed = "fReloadSpeed";
+
+	// 사망
+	[SerializeField] private string _paramDieIndex = "iDieIndex";
+	[SerializeField] private string _paramDie = "tDie";
 
 	[Header("애니메이션 태그")]
 	[SerializeField] private string _tagHardLanding = "HardLanding";
@@ -47,13 +52,18 @@ public class PlayerAnimator : MonoBehaviour
 	private int _hashReload;
 	private int _hashReloadSpeed;
 
+	private int _hashDieIndex;
+	private int _hashDie;
+
 	private bool _hasJumpParam;
 	private bool _hasAimParam;
+	private bool _hasDieParam;
 	#endregion
 
 	private void Awake()
 	{
 		if (_animator == null ||
+			_playerBase == null ||
 			_playerController == null ||
 			_playerShooter == null)
 		{
@@ -89,10 +99,22 @@ public class PlayerAnimator : MonoBehaviour
 			_hashReload = Animator.StringToHash(_paramReload);
 			_hashReloadSpeed = Animator.StringToHash(_paramReloadSpeed);
 		}
+
+		_hasDieParam = !string.IsNullOrEmpty(_paramDieIndex) &&
+			!string.IsNullOrEmpty(_paramDie);
+		if (_hasDieParam)
+		{
+			_hashDieIndex = Animator.StringToHash(_paramDieIndex);
+			_hashDie = Animator.StringToHash(_paramDie);
+		}
 	}
 
 	private void OnEnable()
 	{
+		if (_playerBase != null)
+		{
+			_playerBase.DeadByCause += OnDead;
+		}
 		if (_playerController != null)
 		{
 			_playerController.AimChanged += OnAim;
@@ -106,6 +128,10 @@ public class PlayerAnimator : MonoBehaviour
 
 	private void OnDisable()
 	{
+		if (_playerBase != null)
+		{
+			_playerBase.DeadByCause -= OnDead;
+		}
 		if (_playerController != null)
 		{
 			_playerController.AimChanged -= OnAim;
@@ -168,5 +194,26 @@ public class PlayerAnimator : MonoBehaviour
 	public bool IsLanding()
 	{
 		return _animator.GetCurrentAnimatorStateInfo(0).tagHash == _hashHardLand;
+	}
+
+	public void OnDead(EDamageType damageType)
+	{
+		if (_hasDieParam)
+		{
+			int dieIndex = 0;
+
+			switch (damageType)
+			{
+				case EDamageType.Normal:
+					dieIndex = Random.Range(0, 2);
+					break;
+				case EDamageType.Push:
+					dieIndex = 2;
+					break;
+			}
+
+			_animator.SetInteger(_hashDieIndex, dieIndex);
+			_animator.SetTrigger(_hashDie);
+		}
 	}
 }

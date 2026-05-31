@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
 	#region 인스펙터
 	[SerializeField] private CharacterController _controller;
+	[SerializeField] private PlayerBase _playerBase;
 	[SerializeField] private PlayerAnimator _playerAnimator; // cs
 	[SerializeField] private PlayerShooter _playerShooter; // cs
 
@@ -50,13 +51,12 @@ public class PlayerController : MonoBehaviour
 	private bool _isAimingSequence = false;
 	#endregion
 
-	//public bool IsAiming => _isAiming;
-
 	public event Action<bool> AimChanged; // 조준 상태 변화 이벤트
 
 	private void Awake()
 	{
 		if (_controller == null ||
+			_playerBase == null ||
 			_playerAnimator == null ||
 			_playerShooter == null ||
 			_characterMeshTr == null)
@@ -96,12 +96,26 @@ public class PlayerController : MonoBehaviour
 		float h = Input.GetAxisRaw("Horizontal");
 		float v = Input.GetAxisRaw("Vertical");
 
+		bool isDead = _playerBase.IsDead;
+
+		if (isDead)
+		{
+			h = v = 0f;
+			_isAiming = false;
+			_forceAiming = false;
+
+			AimChanged?.Invoke(false);
+		}
+
 		Vector3 input = new Vector3(h, 0, v);
 		input = Vector3.ClampMagnitude(input, 1.0f);
 
 		bool isSideMove = (h != 0) && (v == 0);
 
-		bool currentAimInput = (_forceAiming || Input.GetMouseButton(1)) && _playerShooter.CanAim;
+		bool currentAimInput = 
+			(_forceAiming || Input.GetMouseButton(1)) &&
+			_playerShooter.CanAim &&
+			!_playerBase.IsDead;
 
 		if (_isAiming != currentAimInput)
 		{
@@ -116,12 +130,13 @@ public class PlayerController : MonoBehaviour
 
 		bool isRunning =
 			(
+			!isDead &&
 			Input.GetKey(_runKey) &&
 			!_isAiming &&
 			v > 0 &&
 			!isSideMove
 			);
-		bool isjumpKeyDown = Input.GetKeyDown(_jumpKey);
+		bool isjumpKeyDown = !isDead && Input.GetKeyDown(_jumpKey);
 
 		bool isLanding = _playerAnimator.IsLanding();
 

@@ -51,7 +51,7 @@ public class HitBox : MonoBehaviour, IDamageable
 		}
 	}
 
-	public void TakeDamage(float damage)
+	public void TakeDamage(float damage, EDamageType damageType)
 	{
 		if (_root == null) return;
 
@@ -61,7 +61,7 @@ public class HitBox : MonoBehaviour, IDamageable
 		{
 			Debug.Log($"[{name}] {_hitLocation} 히트");
 		}
-		_root.TakeDamage(damage * multiplier);
+		_root.TakeDamage(damage * multiplier, damageType);
 	}
 
 	/// <summary>

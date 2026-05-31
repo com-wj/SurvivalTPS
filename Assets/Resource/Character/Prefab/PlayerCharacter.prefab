@@ -51,6 +51,7 @@ MonoBehaviour:
   _maxPitch: 45
   _mouseVisible: 0
   _printLog: 0
+  _playerBase: {fileID: 6905093879600076579}
 --- !u!1 &4156955705194981968
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,6 +96,7 @@ GameObject:
   - component: {fileID: 1849770477902813770}
   - component: {fileID: 4985903341929718339}
   - component: {fileID: 2498472057129554550}
+  - component: {fileID: 6905093879600076579}
   m_Layer: 6
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -159,6 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controller: {fileID: 4823215402435021120}
+  _playerBase: {fileID: 6905093879600076579}
   _playerAnimator: {fileID: 4985903341929718339}
   _playerShooter: {fileID: 2498472057129554550}
   _cameraController: {fileID: 8333986907495215223}
@@ -191,6 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 550819369601387602}
+  _playerBase: {fileID: 6905093879600076579}
   _playerController: {fileID: 1849770477902813770}
   _playerShooter: {fileID: 2498472057129554550}
   _paramMoveX: fMoveX
@@ -202,6 +206,8 @@ MonoBehaviour:
   _paramFire: tFire
   _paramReload: tReload
   _paramReloadSpeed: fReloadSpeed
+  _paramDieIndex: iDieIndex
+  _paramDie: tDie
   _tagHardLanding: HardLanding
   _speedDamp: 0.12
 --- !u!114 &2498472057129554550
@@ -217,6 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCamera: {fileID: 0}
+  _playerBase: {fileID: 6905093879600076579}
   _playerController: {fileID: 1849770477902813770}
   _currentGun: {fileID: 457885875035734574}
   _aimTarget: {fileID: 0}
@@ -225,6 +232,20 @@ MonoBehaviour:
     m_Bits: 264
   _maxDistance: 100
   _reloadKey: 114
+--- !u!114 &6905093879600076579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4177669997710880911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8714a59cf184fbb499b73eb188fec654, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentHp: 100
+  _printLog: 0
 --- !u!1 &4327681119966525622
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,6 +588,7 @@ MonoBehaviour:
   _maxPitch: 20
   _mouseVisible: 0
   _printLog: 0
+  _playerBase: {fileID: 6905093879600076579}
 --- !u!1 &5101835316673933776
 GameObject:
   m_ObjectHideFlags: 0
@@ -2170,6 +2192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 550819369601387602}
   _gun: {fileID: 457885875035734574}
+  _playerBase: {fileID: 6905093879600076579}
 --- !u!114 &4800881948570314830
 MonoBehaviour:
   m_ObjectHideFlags: 0

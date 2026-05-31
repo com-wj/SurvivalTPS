@@ -16,6 +16,9 @@ public class EnemySpawner : Singleton<EnemySpawner>
 
 	[Header("활성화된 적")]
 	[SerializeField] private List<PooledObject> _aliveEnemyList = new List<PooledObject>();
+
+	[Header("의존성")]
+	[SerializeField] private PlayerBase _playerBase;
 	#endregion
 
 	#region 내부 변수
@@ -26,7 +29,8 @@ public class EnemySpawner : Singleton<EnemySpawner>
 	{
 		base.Awake();
 		if (_spawnPoints == null ||
-			_spawnPoints.Length == 0)
+			_spawnPoints.Length == 0 ||
+			_playerBase == null)
 		{
 			Debug.LogWarning($"[{name}] 인스펙터 null");
 			gameObject.SetActive(false);
@@ -35,14 +39,13 @@ public class EnemySpawner : Singleton<EnemySpawner>
 		_aliveEnemyList.Clear();
 	}
 
-	/*
-	// For test
-	private void Start()
+	private void OnEnable()
 	{
-		if (_forceSpawnPrefab == null) return;
-		StartSpawn(_forceSpawnPrefab, 6);
+		if (_playerBase != null)
+		{
+			_playerBase.Dead += StopSpawn;
+		}
 	}
-	*/
 
 	private void OnDisable()
 	{
@@ -51,8 +54,13 @@ public class EnemySpawner : Singleton<EnemySpawner>
 			StopCoroutine(_routine);
 			_routine = null;
 		}
+		if (_playerBase != null)
+		{
+			_playerBase.Dead -= StopSpawn;
+		}
 	}
 
+#if UNITY_EDITOR
 	// For Test
 	private void Update()
 	{
@@ -64,9 +72,11 @@ public class EnemySpawner : Singleton<EnemySpawner>
 			StartSpawn(_forceSpawnPrefab, 3);
 		}
 	}
+#endif
 
 	// 범위 검사 및 생성 명령
-	public void StartSpawn(PooledObject prefab, int UnitCountPerSpawn = 1, float spawnInterval = 0, int SpawnCount = 1)
+	// spawnCount = -1 : 무한 생성
+	public void StartSpawn(PooledObject prefab, int UnitCountPerSpawn = 1, float spawnInterval = 0, int spawnCount = 1)
 	{
 		if (_spawnPoints == null ||
 			_spawnPoints.Length == 0) return;
@@ -74,17 +84,17 @@ public class EnemySpawner : Singleton<EnemySpawner>
 		if (prefab == null) return;
 		if (UnitCountPerSpawn <= 0 ||
 			spawnInterval < 0 ||
-			SpawnCount <= 0) return;
+			(spawnCount <= 0 && spawnCount != -1)) return;
 
 		if (_routine != null)
 		{
 			StopCoroutine(_routine);
 			_routine = null;
 		}
-		_routine = StartCoroutine(Co_Spawning(prefab, UnitCountPerSpawn, spawnInterval, SpawnCount));
+		_routine = StartCoroutine(Co_Spawning(prefab, UnitCountPerSpawn, spawnInterval, spawnCount));
 	}
 
-	private IEnumerator Co_Spawning(PooledObject prefab, int UnitCountPerSpawn, float spawnInterval, int SpawnCount)
+	private IEnumerator Co_Spawning(PooledObject prefab, int UnitCountPerSpawn, float spawnInterval, int spawnCount)
 	{
 		if (PoolManager.Instance == null)
 		{
@@ -92,10 +102,13 @@ public class EnemySpawner : Singleton<EnemySpawner>
 			yield break;
 		}
 
-		for (int i = 0; i < SpawnCount; i++)
+		bool isInfinite = (spawnCount == -1);
+		int logSpawnCount = spawnCount;
+
+		while(isInfinite || spawnCount > 0)
 		{
 			// 회당 스폰 수
-			for (int j = 0; j < UnitCountPerSpawn; j++)
+			for (int i = 0; i < UnitCountPerSpawn; i++)
 			{
 				Spawn(prefab);
 			}
@@ -103,6 +116,11 @@ public class EnemySpawner : Singleton<EnemySpawner>
 			if (_printLog)
 			{
 				Debug.Log($"[{name}] ({prefab.name}) {UnitCountPerSpawn}마리 생성");
+			}
+
+			if (!isInfinite)
+			{
+				spawnCount--;
 			}
 
 			float elapsed = 0;
@@ -113,9 +131,9 @@ public class EnemySpawner : Singleton<EnemySpawner>
 			}
 		}
 
-		if (_printLog)
+		if (_printLog && !isInfinite)
 		{
-			Debug.Log($"[{name}] 스폰 루틴 종료. 총 스폰량 : {UnitCountPerSpawn * SpawnCount}");
+			Debug.Log($"[{name}] 스폰 루틴 종료. 총 스폰량 : {UnitCountPerSpawn * logSpawnCount}");
 		}
 		_routine = null;
 	}
@@ -139,6 +157,12 @@ public class EnemySpawner : Singleton<EnemySpawner>
 
 	public void StopAndClearEnemies()
 	{
+		StopSpawn();
+		ClearEnemies();
+	}
+
+	private void StopSpawn()
+	{
 		if (_routine != null)
 		{
 			StopCoroutine(_routine);
@@ -148,7 +172,10 @@ public class EnemySpawner : Singleton<EnemySpawner>
 				Debug.Log($"[{name}] 생성 중단.");
 			}
 		}
+	}
 
+	private void ClearEnemies()
+	{
 		if (_printLog)
 		{
 			Debug.Log($"[{name}] 모든 몹 클리어.");

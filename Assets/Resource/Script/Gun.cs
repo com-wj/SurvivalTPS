@@ -102,7 +102,7 @@ public class Gun : MonoBehaviour
 		{
 			if (hit.collider.TryGetComponent(out IDamageable target))
 			{
-				target.TakeDamage(_damage);
+				target.TakeDamage(_damage, EDamageType.Normal);
 			}
 
 			if (VFXManager.Instance != null)
