@@ -8,6 +8,7 @@ public class PlayerBase : MonoBehaviour, IDamageable
 
 	[Header("디버그")]
 	[SerializeField] private bool _printLog = false;
+	[SerializeField] private bool _debugMode = false;
 	#endregion
 
 	#region 내부 변수
@@ -31,14 +32,19 @@ public class PlayerBase : MonoBehaviour, IDamageable
 		HPChanged?.Invoke(_currentHp, _maxHp);
 	}
 
+#if UNITY_EDITOR
 	// For Test
 	private void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.F2))
+		if (_debugMode)
 		{
-			Die(EDamageType.Normal);
+			if (Input.GetKeyDown(KeyCode.F4))
+			{
+				Die(EDamageType.Normal);
+			}
 		}
 	}
+#endif
 
 	public void TakeDamage(float damage, EDamageType damageType)
 	{

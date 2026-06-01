@@ -26,7 +26,7 @@ public class LeftHandIKHandler : MonoBehaviour
 		_gun = gun;
 	}
 
-	void OnAnimatorIK(int layerIndex)
+	private void OnAnimatorIK(int layerIndex)
 	{
 		if (_animator == null) return;
 

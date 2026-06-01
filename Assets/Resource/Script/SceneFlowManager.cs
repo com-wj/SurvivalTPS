@@ -1,4 +1,4 @@
-﻿using Cysharp.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using System;
 using System.Threading;
 using UnityEngine;
@@ -20,6 +20,7 @@ public class SceneFlowManager : Singleton<SceneFlowManager>
 	[Header("씬 목록")]
 	[SerializeField] private AssetReference _titleSceneRef;
 	[SerializeField] private AssetReference _gameSceneRef;
+	[SerializeField] private AssetReference _resultSceneRef;
 
 	[Header("씬 로드 모드")]
 	[SerializeField] private LoadSceneMode _loadMode = LoadSceneMode.Single;
@@ -31,15 +32,16 @@ public class SceneFlowManager : Singleton<SceneFlowManager>
 	[SerializeField] private CanvasGroup _fadeGroup;
 	[SerializeField] private float _fadeDuration = 0.5f;
 
-	[Header("로그")]
+	[Header("디버그")]
 	[SerializeField] private bool _printLog = true;
+	[SerializeField] private bool _debugMode = false;
 	#endregion
 
 	#region 내부 변수
 	private bool _isLoading = false;
 
-	private AsyncOperationHandle<SceneInstance> _loadedSceneHandle;
-	private bool _hasLoadedScene = false;
+	//private AsyncOperationHandle<SceneInstance> _loadedSceneHandle;
+	//private bool _hasLoadedScene = false;
 
 	private CancellationTokenSource _cts;
 	#endregion
@@ -55,6 +57,11 @@ public class SceneFlowManager : Singleton<SceneFlowManager>
 
 	private void OnDisable()
 	{
+		DisposeCTS();
+	}
+
+	private void DisposeCTS()
+	{
 		if (_cts == null) return;
 
 		if (!_cts.IsCancellationRequested)
@@ -69,13 +76,20 @@ public class SceneFlowManager : Singleton<SceneFlowManager>
 #if UNITY_EDITOR
 	private void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.F1))
+		if (_debugMode)
 		{
-			TryLoadScene(ESceneID.Title);
-		}
-		if (Input.GetKeyDown(KeyCode.F2))
-		{
-			TryLoadScene(ESceneID.Game);
+			if (Input.GetKeyDown(KeyCode.F1))
+			{
+				TryLoadScene(ESceneID.Title);
+			}
+			if (Input.GetKeyDown(KeyCode.F2))
+			{
+				TryLoadScene(ESceneID.Game);
+			}
+			if (Input.GetKeyDown(KeyCode.F3))
+			{
+				TryLoadScene(ESceneID.Result);
+			}
 		}
 	}
 #endif
@@ -95,16 +109,19 @@ public class SceneFlowManager : Singleton<SceneFlowManager>
 				sceneRef = _gameSceneRef;
 				break;
 			case ESceneID.Result:
+				sceneRef = _resultSceneRef;
 				break;
 		}
 
-		if (sceneRef == null)
+		if (!sceneRef.RuntimeKeyIsValid())
 		{
 			Debug.LogWarning($"[{name}] 인스펙터 null");
 			return;
 		}
 
+		DisposeCTS();
 		_cts = new CancellationTokenSource();
+
 		LoadSceneAysnc(sceneRef, _cts.Token).Forget();
 	}
 
@@ -128,6 +145,7 @@ public class SceneFlowManager : Singleton<SceneFlowManager>
 
 			if (handle.Status == AsyncOperationStatus.Succeeded)
 			{
+				/*
 				if (_hasLoadedScene && _loadedSceneHandle.IsValid())
 				{
 					Addressables.Release(_loadedSceneHandle);
@@ -135,12 +153,15 @@ public class SceneFlowManager : Singleton<SceneFlowManager>
 
 				_loadedSceneHandle = handle;
 				_hasLoadedScene = true;
+				*/
 
 				string loadedSceneName = handle.Result.Scene.name;
 				if (_printLog)
 				{
 					Debug.Log($"[{name}] ({loadedSceneName}) 씬 로드 완료");
 				}
+
+				await UniTask.Yield(PlayerLoopTiming.Update, token);
 
 				await FadeAsync(0f, _fadeDuration, token); // 페이드 인
 			}

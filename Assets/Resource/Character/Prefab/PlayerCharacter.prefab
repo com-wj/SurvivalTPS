@@ -246,6 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentHp: 100
   _printLog: 0
+  _debugMode: 0
 --- !u!1 &4327681119966525622
 GameObject:
   m_ObjectHideFlags: 0

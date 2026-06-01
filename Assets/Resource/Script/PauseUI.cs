@@ -127,8 +127,11 @@ public class PauseUI : MonoBehaviour
 
 		OnPauseUIClose();
 		//AudioManager.Instance.PlayOneShot("MoveSceneButtonClick");
-		//sceneFlowManager.LoadTitleScene();
-		Time.timeScale = 0f;
+		if (SceneFlowManager.Instance != null)
+		{
+			sceneFlowManager.TryLoadScene(ESceneID.Title);
+			Time.timeScale = 0f;
+		}
 	}
 
 	public void OnClickExitButton()

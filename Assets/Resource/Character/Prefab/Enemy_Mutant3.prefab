@@ -125,7 +125,7 @@ MonoBehaviour:
   _targetBase: {fileID: 0}
   _targetTr: {fileID: 0}
   _rotateSharpness: 8
-  _damageType: 0
+  _damageType: 1
   _printLog: 0
 --- !u!114 &9042740942058499583
 MonoBehaviour:
