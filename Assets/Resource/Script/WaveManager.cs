@@ -73,8 +73,8 @@ public class WaveManager : Singleton<WaveManager>
 		}
 
 		_waveDatas = waves;
-		_waveIndex = 0;
 		_waveTimer = 0f;
+		_waveIndex = 0;
 		_isWaveRunning = true;
 
 		StartWave(_waveIndex);
@@ -88,6 +88,7 @@ public class WaveManager : Singleton<WaveManager>
 			Debug.Log($"[{name}] {index}웨이브 시작");
 		}
 
+		_waveTimer = 0;
 		_waveIndex = index;
 
 		if (_enemySpawner == null)

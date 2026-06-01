@@ -1566,6 +1566,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_B Variant (56)
       objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1669,6 +1674,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Cross_A Variant (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4573597951997028536, guid: 92d0fe7b5ef2f8b4f85f068e9d3b78c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2479,6 +2489,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Base_B (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4424675242741290, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_RootOrder
       value: 383
@@ -2647,6 +2661,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Base_A Variant (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533558233676578091, guid: acc26a45dd26f874f9888644c2252af8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3070,6 +3089,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Base_Win_A (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1022363907220162, guid: 5ed7961851f74e242a0260333116b27e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4167575584100154, guid: 5ed7961851f74e242a0260333116b27e, type: 3}
       propertyPath: m_RootOrder
       value: 56
@@ -3316,6 +3339,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Base_A Variant (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 8533558233676578091, guid: acc26a45dd26f874f9888644c2252af8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3335,6 +3363,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1258231316}
     m_Modifications:
+    - target: {fileID: 3527348036252823688, guid: cfbb8ce6700db274cb2833b3dc456c7b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3528874888792721400, guid: cfbb8ce6700db274cb2833b3dc456c7b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3407,6 +3440,10 @@ PrefabInstance:
     - target: {fileID: 1409312857553968, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
       propertyPath: m_Name
       value: Wall_Base_A (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409312857553968, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4020461578476064, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
       propertyPath: m_RootOrder
@@ -4059,6 +4096,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_A Variant (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 4573597951997028536, guid: 92d0fe7b5ef2f8b4f85f068e9d3b78c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4200,6 +4242,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall_Cross_In_A Variant (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7830253197395510910, guid: 419f9d817647e6c41be3034999943f98,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7834458871164387012, guid: 419f9d817647e6c41be3034999943f98,
         type: 3}
@@ -4369,6 +4416,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 9131817206603583971, guid: 909d0260a2f1f8340a36853f01e5de19,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4432,6 +4484,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall_Base_Steps_A Variant (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 671733362172222670, guid: 8fabe542fd013214bb4c26abc97c77de,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4565,6 +4622,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Cross_A Variant (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4573597951997028536, guid: 92d0fe7b5ef2f8b4f85f068e9d3b78c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4891,6 +4953,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u0421eiling_Base_C Variant (3)"
       objectReference: {fileID: 0}
+    - target: {fileID: 9131817206603583971, guid: 909d0260a2f1f8340a36853f01e5de19,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4914,6 +4981,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Base_Steps_A Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153251090392791566, guid: 3b146c4c7fe43864ebfc489a87491a4c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6154405512593307102, guid: 3b146c4c7fe43864ebfc489a87491a4c,
         type: 3}
@@ -6143,6 +6215,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Base_Win_A (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1022363907220162, guid: 5ed7961851f74e242a0260333116b27e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4167575584100154, guid: 5ed7961851f74e242a0260333116b27e, type: 3}
       propertyPath: m_RootOrder
       value: 55
@@ -6202,6 +6278,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\u0421eiling_Base_A Variant (2)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2487013672159153727, guid: 2f6978f4bf25e584080c863cb5dc9f86,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2492188093446755173, guid: 2f6978f4bf25e584080c863cb5dc9f86,
         type: 3}
@@ -6312,6 +6393,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u0421eiling_Cross_A Variant (1)"
       objectReference: {fileID: 0}
+    - target: {fileID: 309133640282484093, guid: d6b57d82d11744c4a8739dd61a362717,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6335,6 +6421,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall_Cross_In_A Variant (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7830253197395510910, guid: 419f9d817647e6c41be3034999943f98,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7834458871164387012, guid: 419f9d817647e6c41be3034999943f98,
         type: 3}
@@ -6400,6 +6491,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_B Variant (91)
       objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6462,6 +6558,10 @@ PrefabInstance:
     - target: {fileID: 1022363907220162, guid: 5ed7961851f74e242a0260333116b27e, type: 3}
       propertyPath: m_Name
       value: Wall_Base_Win_A (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1022363907220162, guid: 5ed7961851f74e242a0260333116b27e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4167575584100154, guid: 5ed7961851f74e242a0260333116b27e, type: 3}
       propertyPath: m_RootOrder
@@ -6976,6 +7076,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Base_B (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4424675242741290, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_RootOrder
       value: 310
@@ -7071,6 +7175,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_A Variant (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4573597951997028536, guid: 92d0fe7b5ef2f8b4f85f068e9d3b78c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7094,6 +7203,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Cross_B Variant (90)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
@@ -7810,6 +7924,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Base_A Variant (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8533558233676578091, guid: acc26a45dd26f874f9888644c2252af8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7874,6 +7993,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_A Variant (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 4573597951997028536, guid: 92d0fe7b5ef2f8b4f85f068e9d3b78c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7897,6 +8021,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\u0421eiling_Base_A Variant"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2487013672159153727, guid: 2f6978f4bf25e584080c863cb5dc9f86,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2492188093446755173, guid: 2f6978f4bf25e584080c863cb5dc9f86,
         type: 3}
@@ -7966,6 +8095,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall_Cross_Out_A Variant (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143562581110424833, guid: 7eb4b4b740d201a48ae2d865b8fae01e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9147394360706696823, guid: 7eb4b4b740d201a48ae2d865b8fae01e,
         type: 3}
@@ -9393,6 +9527,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u0421eiling_Cross_A Variant"
       objectReference: {fileID: 0}
+    - target: {fileID: 309133640282484093, guid: d6b57d82d11744c4a8739dd61a362717,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9416,6 +9555,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Cross_B Variant (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
@@ -9907,6 +10051,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Base_A Variant (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8533558233676578091, guid: acc26a45dd26f874f9888644c2252af8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10397,6 +10546,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall_TwoThirds_A Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023964258357788489, guid: 7dad17b445cd1b84c880e048e5a4b3c2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11423,6 +11577,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90.00001
       objectReference: {fileID: 0}
+    - target: {fileID: 4085630652085402285, guid: e82c8a35e7e10524b9603aea5f3a308f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11705,6 +11864,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_B Variant (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11763,6 +11927,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall_Cross_In_A Variant (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7830253197395510910, guid: 419f9d817647e6c41be3034999943f98,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7834458871164387012, guid: 419f9d817647e6c41be3034999943f98,
         type: 3}
@@ -12695,6 +12864,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1258231316}
     m_Modifications:
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12753,6 +12927,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall_Cross_In_A Variant (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7830253197395510910, guid: 419f9d817647e6c41be3034999943f98,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7834458871164387012, guid: 419f9d817647e6c41be3034999943f98,
         type: 3}
@@ -12817,6 +12996,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Cross_B Variant (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
@@ -13137,6 +13321,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall_OneThird_A Variant (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7895184364368899666, guid: d7d2275d21f636c4d91fd722423ba939,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7897399520554906930, guid: d7d2275d21f636c4d91fd722423ba939,
         type: 3}
@@ -14322,6 +14511,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_A Variant (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 4573597951997028536, guid: 92d0fe7b5ef2f8b4f85f068e9d3b78c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15041,6 +15235,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_A Variant (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 4573597951997028536, guid: 92d0fe7b5ef2f8b4f85f068e9d3b78c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15244,6 +15443,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u0421eiling_Cross_A Variant (20)"
       objectReference: {fileID: 0}
+    - target: {fileID: 309133640282484093, guid: d6b57d82d11744c4a8739dd61a362717,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15332,6 +15536,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall_Cross_Out_A Variant (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143562581110424833, guid: 7eb4b4b740d201a48ae2d865b8fae01e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9147394360706696823, guid: 7eb4b4b740d201a48ae2d865b8fae01e,
         type: 3}
@@ -15614,6 +15823,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Cross_A Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4573597951997028536, guid: 92d0fe7b5ef2f8b4f85f068e9d3b78c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16736,6 +16950,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_A Variant (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 4573597951997028536, guid: 92d0fe7b5ef2f8b4f85f068e9d3b78c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16758,6 +16977,10 @@ PrefabInstance:
     - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_Name
       value: Wall_Base_B (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4424675242741290, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_RootOrder
@@ -17388,6 +17611,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Cross_Out_A Variant (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 9143562581110424833, guid: 7eb4b4b740d201a48ae2d865b8fae01e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9147394360706696823, guid: 7eb4b4b740d201a48ae2d865b8fae01e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17694,6 +17922,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall_Base_Steps_A Variant (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 671733362172222670, guid: 8fabe542fd013214bb4c26abc97c77de,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18093,6 +18326,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Cross_Out_A Variant (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 9143562581110424833, guid: 7eb4b4b740d201a48ae2d865b8fae01e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9147394360706696823, guid: 7eb4b4b740d201a48ae2d865b8fae01e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18156,6 +18394,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall_Cross_In_A Variant (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7830253197395510910, guid: 419f9d817647e6c41be3034999943f98,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7834458871164387012, guid: 419f9d817647e6c41be3034999943f98,
         type: 3}
@@ -18825,6 +19068,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u0421eiling_Base_Steps_A Variant (2)"
       objectReference: {fileID: 0}
+    - target: {fileID: 3145992806474953976, guid: 297338036e7e04c40bfb16226edfdde8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3151651269537790782, guid: 297338036e7e04c40bfb16226edfdde8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19178,6 +19426,10 @@ PrefabInstance:
     - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_Name
       value: Wall_Base_B (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4424675242741290, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_RootOrder
@@ -19580,6 +19832,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_B Variant (93)
       objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19693,6 +19950,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\u0421eiling_Cross_B Variant (13)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7418127062081630895, guid: e6cb355bbd4912e45a87157e0bb90fe3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22250,6 +22512,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u0421eiling_Cross_B Variant (16)"
       objectReference: {fileID: 0}
+    - target: {fileID: 7418127062081630895, guid: e6cb355bbd4912e45a87157e0bb90fe3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22272,6 +22539,10 @@ PrefabInstance:
     - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_Name
       value: Wall_Base_B (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4424675242741290, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_RootOrder
@@ -22587,6 +22858,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_B Variant (139)
       objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22714,6 +22990,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Cross_B Variant (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
@@ -22957,6 +23238,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90.00001
       objectReference: {fileID: 0}
+    - target: {fileID: 2993231204131239039, guid: f6b1831420c626f42942e193b54c72ff,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23064,6 +23350,10 @@ PrefabInstance:
     - target: {fileID: 1409312857553968, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
       propertyPath: m_Name
       value: Wall_Base_A (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409312857553968, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4020461578476064, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
       propertyPath: m_RootOrder
@@ -23835,6 +24125,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u0421eiling_Cross_A Variant (12)"
       objectReference: {fileID: 0}
+    - target: {fileID: 309133640282484093, guid: d6b57d82d11744c4a8739dd61a362717,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24204,6 +24499,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Base_A Variant (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 8533558233676578091, guid: acc26a45dd26f874f9888644c2252af8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24331,6 +24631,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\u0421eiling_Cross_A Variant (17)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 309133640282484093, guid: d6b57d82d11744c4a8739dd61a362717,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24640,6 +24945,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Cross_B Variant (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
@@ -25985,6 +26295,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_B Variant (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26413,6 +26728,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall_OneThird_A Variant (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7895184364368899666, guid: d7d2275d21f636c4d91fd722423ba939,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7897399520554906930, guid: d7d2275d21f636c4d91fd722423ba939,
         type: 3}
@@ -27006,6 +27326,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Base_Steps_A Variant (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 671733362172222670, guid: 8fabe542fd013214bb4c26abc97c77de,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27087,6 +27412,10 @@ PrefabInstance:
     - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_Name
       value: Wall_Base_B (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4424675242741290, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_RootOrder
@@ -27566,6 +27895,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_A Variant (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 4573597951997028536, guid: 92d0fe7b5ef2f8b4f85f068e9d3b78c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27678,6 +28012,10 @@ PrefabInstance:
     - target: {fileID: 1409312857553968, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
       propertyPath: m_Name
       value: Wall_Base_A (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409312857553968, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4020461578476064, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
       propertyPath: m_RootOrder
@@ -29899,6 +30237,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u0421eiling_Base_A Variant (1)"
       objectReference: {fileID: 0}
+    - target: {fileID: 2487013672159153727, guid: 2f6978f4bf25e584080c863cb5dc9f86,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2492188093446755173, guid: 2f6978f4bf25e584080c863cb5dc9f86,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31141,6 +31484,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Base_A (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409312857553968, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4020461578476064, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -31760,6 +32107,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Base_A Variant (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 8533558233676578091, guid: acc26a45dd26f874f9888644c2252af8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31847,6 +32199,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Base_Steps_A Variant (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153251090392791566, guid: 3b146c4c7fe43864ebfc489a87491a4c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6154405512593307102, guid: 3b146c4c7fe43864ebfc489a87491a4c,
         type: 3}
@@ -32847,6 +33204,10 @@ PrefabInstance:
     - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_Name
       value: Wall_Base_B (43)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4424675242741290, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_RootOrder
@@ -34150,6 +34511,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_OneThird_A Variant (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7895184364368899666, guid: d7d2275d21f636c4d91fd722423ba939,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7897399520554906930, guid: d7d2275d21f636c4d91fd722423ba939,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34201,6 +34567,79 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 816061080}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &816388330
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1418557759}
+    m_Modifications:
+    - target: {fileID: 1328576431220902, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
+      propertyPath: m_Name
+      value: Wall_End_Coner (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328576431220902, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328576431220902, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
+      propertyPath: m_RootOrder
+      value: 299
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 20.486673
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.8599987
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70710784
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071058
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90.00001
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
 --- !u!1001 &817191020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35144,6 +35583,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4573597951997028536, guid: 92d0fe7b5ef2f8b4f85f068e9d3b78c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -35893,6 +36337,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1258231316}
     m_Modifications:
+    - target: {fileID: 7830253197395510910, guid: 419f9d817647e6c41be3034999943f98,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7834458871164387012, guid: 419f9d817647e6c41be3034999943f98,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36354,6 +36803,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Base_A (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409312857553968, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4020461578476064, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -36412,6 +36865,10 @@ PrefabInstance:
     - target: {fileID: 1409312857553968, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
       propertyPath: m_Name
       value: Wall_Base_A (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409312857553968, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4020461578476064, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
       propertyPath: m_RootOrder
@@ -36687,6 +37144,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_TwoThirds_A Variant (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2023964258357788489, guid: 7dad17b445cd1b84c880e048e5a4b3c2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -36697,77 +37159,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2018278391945263085, guid: 7dad17b445cd1b84c880e048e5a4b3c2,
     type: 3}
   m_PrefabInstance: {fileID: 877363005}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &879025689
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1418557759}
-    m_Modifications:
-    - target: {fileID: 1328576431220902, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
-      propertyPath: m_Name
-      value: Wall_End_Coner (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
-      propertyPath: m_RootOrder
-      value: 299
-      objectReference: {fileID: 0}
-    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 20.486673
-      objectReference: {fileID: 0}
-    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.2666667
-      objectReference: {fileID: 0}
-    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.8599987
-      objectReference: {fileID: 0}
-    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.70710784
-      objectReference: {fileID: 0}
-    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.7071058
-      objectReference: {fileID: 0}
-    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -90.00001
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
---- !u!4 &879025690 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 879025689}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &880659144
 PrefabInstance:
@@ -36900,6 +37291,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\u0421eiling_Cross_B Variant (12)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7418127062081630895, guid: e6cb355bbd4912e45a87157e0bb90fe3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -37177,6 +37573,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\u0421eiling_Base_A Variant (4)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2487013672159153727, guid: 2f6978f4bf25e584080c863cb5dc9f86,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2492188093446755173, guid: 2f6978f4bf25e584080c863cb5dc9f86,
         type: 3}
@@ -38009,6 +38410,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_B Variant (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -38067,6 +38473,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall_Cross_Out_A Variant (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143562581110424833, guid: 7eb4b4b740d201a48ae2d865b8fae01e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9147394360706696823, guid: 7eb4b4b740d201a48ae2d865b8fae01e,
         type: 3}
@@ -38506,6 +38917,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall_Base_Steps_A Variant (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 671733362172222670, guid: 8fabe542fd013214bb4c26abc97c77de,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -39213,6 +39629,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_A Variant (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4573597951997028536, guid: 92d0fe7b5ef2f8b4f85f068e9d3b78c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -39640,6 +40061,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Cross_Out_A Variant (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 9143562581110424833, guid: 7eb4b4b740d201a48ae2d865b8fae01e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9147394360706696823, guid: 7eb4b4b740d201a48ae2d865b8fae01e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39739,6 +40165,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Base_Steps_A Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 671733362172222670, guid: 8fabe542fd013214bb4c26abc97c77de,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -39815,6 +40246,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\u0421eiling_Base_B Variant (6)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3527348036252823688, guid: cfbb8ce6700db274cb2833b3dc456c7b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3528874888792721400, guid: cfbb8ce6700db274cb2833b3dc456c7b,
         type: 3}
@@ -41216,6 +41652,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_B Variant (96)
       objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -41338,6 +41779,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Cross_B Variant (98)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
@@ -41471,6 +41917,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Cross_B Variant (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
@@ -43543,6 +43994,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Base_B (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4424675242741290, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_RootOrder
       value: 251
@@ -43839,6 +44294,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1258231316}
     m_Modifications:
+    - target: {fileID: 7895184364368899666, guid: d7d2275d21f636c4d91fd722423ba939,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7897399520554906930, guid: d7d2275d21f636c4d91fd722423ba939,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -44895,6 +45355,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_A Variant (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4573597951997028536, guid: 92d0fe7b5ef2f8b4f85f068e9d3b78c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -45175,6 +45640,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_B Variant (134)
       objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -45311,6 +45781,10 @@ PrefabInstance:
     - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_Name
       value: Wall_Base_B (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4424675242741290, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_RootOrder
@@ -46330,6 +46804,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u0421eiling_Base_A Variant (5)"
       objectReference: {fileID: 0}
+    - target: {fileID: 2487013672159153727, guid: 2f6978f4bf25e584080c863cb5dc9f86,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2492188093446755173, guid: 2f6978f4bf25e584080c863cb5dc9f86,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -47044,6 +47523,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Base_Steps_A Variant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6153251090392791566, guid: 3b146c4c7fe43864ebfc489a87491a4c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6154405512593307102, guid: 3b146c4c7fe43864ebfc489a87491a4c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -47323,6 +47807,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u0421eiling_Base_B Variant (1)"
       objectReference: {fileID: 0}
+    - target: {fileID: 3527348036252823688, guid: cfbb8ce6700db274cb2833b3dc456c7b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3528874888792721400, guid: cfbb8ce6700db274cb2833b3dc456c7b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -47560,6 +48049,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Base_B (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4424675242741290, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_RootOrder
       value: 249
@@ -47728,6 +48221,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\u0421eiling_Cross_A Variant (5)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 309133640282484093, guid: d6b57d82d11744c4a8739dd61a362717,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -47903,6 +48401,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Base_A Variant (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533558233676578091, guid: acc26a45dd26f874f9888644c2252af8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -48103,6 +48606,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u0421eiling_Cross_A Variant (3)"
       objectReference: {fileID: 0}
+    - target: {fileID: 309133640282484093, guid: d6b57d82d11744c4a8739dd61a362717,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -48217,6 +48725,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u0421eiling_Base_B Variant (35)"
       objectReference: {fileID: 0}
+    - target: {fileID: 3527348036252823688, guid: cfbb8ce6700db274cb2833b3dc456c7b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3528874888792721400, guid: cfbb8ce6700db274cb2833b3dc456c7b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -48285,6 +48798,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall_Cross_Out_A Variant (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143562581110424833, guid: 7eb4b4b740d201a48ae2d865b8fae01e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9147394360706696823, guid: 7eb4b4b740d201a48ae2d865b8fae01e,
         type: 3}
@@ -48547,6 +49065,10 @@ PrefabInstance:
     - target: {fileID: 1409312857553968, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
       propertyPath: m_Name
       value: Wall_Base_A (43)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409312857553968, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4020461578476064, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
       propertyPath: m_RootOrder
@@ -48931,6 +49453,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\u0421eiling_Base_C Variant (2)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9131817206603583971, guid: 909d0260a2f1f8340a36853f01e5de19,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -49456,6 +49983,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3528874888792721400, guid: cfbb8ce6700db274cb2833b3dc456c7b,
     type: 3}
   m_PrefabInstance: {fileID: 1179170499}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1179829746 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 816388330}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1181678534
 GameObject:
@@ -50169,6 +50702,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1258231316}
     m_Modifications:
+    - target: {fileID: 847746530267144729, guid: b9d392e5190d0ef4eb7de3c87e2c6227,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 849107147678354065, guid: b9d392e5190d0ef4eb7de3c87e2c6227,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -50964,6 +51502,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_B Variant (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -51633,6 +52176,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Base_B (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4424675242741290, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_RootOrder
       value: 89
@@ -51880,6 +52427,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_OneThird_A Variant (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 7895184364368899666, guid: d7d2275d21f636c4d91fd722423ba939,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7897399520554906930, guid: d7d2275d21f636c4d91fd722423ba939,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -52042,6 +52594,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Base_A Variant (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533558233676578091, guid: acc26a45dd26f874f9888644c2252af8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -54078,6 +54635,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u0421eiling_Base_C Variant (8)"
       objectReference: {fileID: 0}
+    - target: {fileID: 9131817206603583971, guid: 909d0260a2f1f8340a36853f01e5de19,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -54350,6 +54912,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Base_A (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409312857553968, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4020461578476064, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -54409,6 +54975,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall_Cross_In_A Variant (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7830253197395510910, guid: 419f9d817647e6c41be3034999943f98,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7834458871164387012, guid: 419f9d817647e6c41be3034999943f98,
         type: 3}
@@ -54800,6 +55371,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_B Variant (138)
       objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -54972,6 +55548,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Railing_Base_A Variant (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4133724668190966313, guid: 69a4729c7bc845648b642f5724c5898b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -55957,6 +56538,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u0421eiling_Base_B Variant (33)"
       objectReference: {fileID: 0}
+    - target: {fileID: 3527348036252823688, guid: cfbb8ce6700db274cb2833b3dc456c7b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3528874888792721400, guid: cfbb8ce6700db274cb2833b3dc456c7b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -56143,6 +56729,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Cross_B Variant (99)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
@@ -56524,6 +57115,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall_Cross_Out_A Variant (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143562581110424833, guid: 7eb4b4b740d201a48ae2d865b8fae01e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9147394360706696823, guid: 7eb4b4b740d201a48ae2d865b8fae01e,
         type: 3}
@@ -57034,6 +57630,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall_Cross_In_A Variant (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7830253197395510910, guid: 419f9d817647e6c41be3034999943f98,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7834458871164387012, guid: 419f9d817647e6c41be3034999943f98,
         type: 3}
@@ -58265,6 +58866,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u0421eiling_Cross_A Variant (4)"
       objectReference: {fileID: 0}
+    - target: {fileID: 309133640282484093, guid: d6b57d82d11744c4a8739dd61a362717,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -58558,6 +59164,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Base_B (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4424675242741290, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_RootOrder
       value: 333
@@ -58667,6 +59277,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\u0421eiling_Cross_B Variant (11)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7418127062081630895, guid: e6cb355bbd4912e45a87157e0bb90fe3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -58883,6 +59498,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\u0421eiling_Base_A Variant (3)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2487013672159153727, guid: 2f6978f4bf25e584080c863cb5dc9f86,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2492188093446755173, guid: 2f6978f4bf25e584080c863cb5dc9f86,
         type: 3}
@@ -59490,6 +60110,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90.00001
       objectReference: {fileID: 0}
+    - target: {fileID: 8533558233676578091, guid: acc26a45dd26f874f9888644c2252af8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -59822,12 +60447,11 @@ Transform:
   - {fileID: 720023530}
   - {fileID: 162096690}
   - {fileID: 207562351}
-  - {fileID: 1471374079}
   - {fileID: 392597718}
   - {fileID: 90182263}
   - {fileID: 658473248}
   - {fileID: 591160627}
-  - {fileID: 879025690}
+  - {fileID: 1179829746}
   - {fileID: 1412352613}
   - {fileID: 818962211}
   - {fileID: 1350209454}
@@ -59894,6 +60518,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Cross_B Variant (89)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
@@ -60273,6 +60902,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Cross_B Variant (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
@@ -61279,6 +61913,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Railing_Base_A Variant (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 4133724668190966313, guid: 69a4729c7bc845648b642f5724c5898b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -61373,6 +62012,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Cross_B Variant (55)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
@@ -61477,6 +62121,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Cross_A Variant (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4573597951997028536, guid: 92d0fe7b5ef2f8b4f85f068e9d3b78c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -61952,77 +62601,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1470451995}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1471374078
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1418557759}
-    m_Modifications:
-    - target: {fileID: 1328576431220902, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
-      propertyPath: m_Name
-      value: Wall_End_Coner (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
-      propertyPath: m_RootOrder
-      value: 157
-      objectReference: {fileID: 0}
-    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 20.486673
-      objectReference: {fileID: 0}
-    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.2666667
-      objectReference: {fileID: 0}
-    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.8599987
-      objectReference: {fileID: 0}
-    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.70710784
-      objectReference: {fileID: 0}
-    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.7071058
-      objectReference: {fileID: 0}
-    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -90.00001
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
---- !u!4 &1471374079 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1471374078}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1473995267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62221,6 +62799,10 @@ PrefabInstance:
     - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_Name
       value: Wall_Base_B (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4424675242741290, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_RootOrder
@@ -62507,6 +63089,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall_OneThird_A Variant (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7895184364368899666, guid: d7d2275d21f636c4d91fd722423ba939,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7897399520554906930, guid: d7d2275d21f636c4d91fd722423ba939,
         type: 3}
@@ -63080,6 +63667,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Base_C Variant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4085630652085402285, guid: e82c8a35e7e10524b9603aea5f3a308f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -63349,6 +63941,10 @@ PrefabInstance:
     - target: {fileID: 1409312857553968, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
       propertyPath: m_Name
       value: Wall_Base_A (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409312857553968, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4020461578476064, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
       propertyPath: m_RootOrder
@@ -64214,6 +64810,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_B Variant (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -64342,6 +64943,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\u0421eiling_Base_B Variant (37)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3527348036252823688, guid: cfbb8ce6700db274cb2833b3dc456c7b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3528874888792721400, guid: cfbb8ce6700db274cb2833b3dc456c7b,
         type: 3}
@@ -64801,6 +65407,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall_OneThird_A Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7895184364368899666, guid: d7d2275d21f636c4d91fd722423ba939,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7897399520554906930, guid: d7d2275d21f636c4d91fd722423ba939,
         type: 3}
@@ -65402,6 +66013,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_B Variant (101)
       objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -65692,6 +66308,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Railing_Base_A Variant (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4133724668190966313, guid: 69a4729c7bc845648b642f5724c5898b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -66969,6 +67590,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_B Variant (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -67349,6 +67975,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Base_A (36)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409312857553968, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4020461578476064, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
       propertyPath: m_RootOrder
       value: 255
@@ -67655,6 +68285,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u0421eiling_Base_B Variant (34)"
       objectReference: {fileID: 0}
+    - target: {fileID: 3527348036252823688, guid: cfbb8ce6700db274cb2833b3dc456c7b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3528874888792721400, guid: cfbb8ce6700db274cb2833b3dc456c7b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -67768,6 +68403,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\u0421eiling_Cross_A Variant (21)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 309133640282484093, guid: d6b57d82d11744c4a8739dd61a362717,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -67909,6 +68549,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Cross_Out_A Variant (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 9143562581110424833, guid: 7eb4b4b740d201a48ae2d865b8fae01e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9147394360706696823, guid: 7eb4b4b740d201a48ae2d865b8fae01e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -68036,6 +68681,10 @@ PrefabInstance:
     - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_Name
       value: Wall_Base_B (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4424675242741290, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_RootOrder
@@ -69026,6 +69675,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_B Variant (58)
       objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -69517,6 +70171,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Base_A Variant (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 8533558233676578091, guid: acc26a45dd26f874f9888644c2252af8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -69883,6 +70542,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_B Variant (140)
       objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -70243,6 +70907,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_A Variant (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4573597951997028536, guid: 92d0fe7b5ef2f8b4f85f068e9d3b78c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -70546,6 +71215,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\u0421eiling_Base_C Variant (9)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9131817206603583971, guid: 909d0260a2f1f8340a36853f01e5de19,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -70898,6 +71572,10 @@ PrefabInstance:
     - target: {fileID: 1328576431220902, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
       propertyPath: m_Name
       value: Wall_End_Coner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328576431220902, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
       propertyPath: m_RootOrder
@@ -72090,6 +72768,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u0421eiling_Base_C Variant (11)"
       objectReference: {fileID: 0}
+    - target: {fileID: 9131817206603583971, guid: 909d0260a2f1f8340a36853f01e5de19,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -72379,6 +73062,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\u0421eiling_Base_B Variant (38)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3527348036252823688, guid: cfbb8ce6700db274cb2833b3dc456c7b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3528874888792721400, guid: cfbb8ce6700db274cb2833b3dc456c7b,
         type: 3}
@@ -72864,6 +73552,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Base_B (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4424675242741290, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_RootOrder
       value: 306
@@ -73246,6 +73938,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Base_A Variant (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533558233676578091, guid: acc26a45dd26f874f9888644c2252af8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -74265,6 +74962,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_A Variant (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 4573597951997028536, guid: 92d0fe7b5ef2f8b4f85f068e9d3b78c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -74587,6 +75289,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Base_A Variant (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 8533558233676578091, guid: acc26a45dd26f874f9888644c2252af8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -74862,6 +75569,10 @@ PrefabInstance:
     - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_Name
       value: Wall_Base_B (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4424675242741290, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_RootOrder
@@ -75282,6 +75993,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1258231316}
     m_Modifications:
+    - target: {fileID: 1409312857553968, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4020461578476064, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -75647,6 +76362,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Base_A (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409312857553968, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4020461578476064, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
       propertyPath: m_RootOrder
       value: 247
@@ -75834,6 +76553,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Cross_B Variant (92)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
@@ -76617,6 +77341,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_B Variant (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -76878,6 +77607,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Base_B (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4424675242741290, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_RootOrder
       value: 103
@@ -77125,6 +77858,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall_TwoThirds_A Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023964258357788489, guid: 7dad17b445cd1b84c880e048e5a4b3c2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -78692,6 +79430,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Base_B (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4424675242741290, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_RootOrder
       value: 313
@@ -78796,6 +79538,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\u0421eiling_Base_C Variant (5)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9131817206603583971, guid: 909d0260a2f1f8340a36853f01e5de19,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -79128,6 +79875,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_B Variant (57)
       objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -79342,6 +80094,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\u0421eiling_Cross_A Variant (2)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 309133640282484093, guid: d6b57d82d11744c4a8739dd61a362717,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -80290,6 +81047,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Cross_Out_A Variant (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 9143562581110424833, guid: 7eb4b4b740d201a48ae2d865b8fae01e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9147394360706696823, guid: 7eb4b4b740d201a48ae2d865b8fae01e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -80600,6 +81362,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u0421eiling_Base_B Variant (36)"
       objectReference: {fileID: 0}
+    - target: {fileID: 3527348036252823688, guid: cfbb8ce6700db274cb2833b3dc456c7b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3528874888792721400, guid: cfbb8ce6700db274cb2833b3dc456c7b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -80709,6 +81476,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Base_A Variant (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 8533558233676578091, guid: acc26a45dd26f874f9888644c2252af8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -80732,6 +81504,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\u0421eiling_Base_Steps_A Variant (1)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3145992806474953976, guid: 297338036e7e04c40bfb16226edfdde8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3151651269537790782, guid: 297338036e7e04c40bfb16226edfdde8,
         type: 3}
@@ -80866,6 +81643,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Base_B (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4424675242741290, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_RootOrder
       value: 305
@@ -80925,6 +81706,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall_Cross_In_A Variant (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7830253197395510910, guid: 419f9d817647e6c41be3034999943f98,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7834458871164387012, guid: 419f9d817647e6c41be3034999943f98,
         type: 3}
@@ -81093,6 +81879,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\u0421eiling_Cross_B Variant (14)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7418127062081630895, guid: e6cb355bbd4912e45a87157e0bb90fe3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -81415,6 +82206,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_A Variant (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 4573597951997028536, guid: 92d0fe7b5ef2f8b4f85f068e9d3b78c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -81502,6 +82298,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\u0421eiling_Base_B Variant (4)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3527348036252823688, guid: cfbb8ce6700db274cb2833b3dc456c7b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3528874888792721400, guid: cfbb8ce6700db274cb2833b3dc456c7b,
         type: 3}
@@ -81640,6 +82441,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Cross_B Variant (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
@@ -81828,6 +82634,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Cross_B Variant (95)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
@@ -82641,6 +83452,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Cross_B Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
@@ -83462,6 +84278,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Base_A (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409312857553968, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4020461578476064, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
       propertyPath: m_RootOrder
       value: 246
@@ -83529,6 +84349,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Cross_B Variant (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
@@ -84388,6 +85213,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall_Base_Steps_A Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 671733362172222670, guid: 8fabe542fd013214bb4c26abc97c77de,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -85499,6 +86329,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u0421eiling_Base_Steps_A Variant"
       objectReference: {fileID: 0}
+    - target: {fileID: 3145992806474953976, guid: 297338036e7e04c40bfb16226edfdde8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3151651269537790782, guid: 297338036e7e04c40bfb16226edfdde8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -85625,6 +86460,10 @@ PrefabInstance:
     - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_Name
       value: Wall_Base_B (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4424675242741290, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_RootOrder
@@ -86833,6 +87672,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Base_A (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409312857553968, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4020461578476064, guid: d13a9ab53ad5f8b4bb01fbd6e126335b, type: 3}
       propertyPath: m_RootOrder
       value: 248
@@ -87262,6 +88105,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_A Variant (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 4573597951997028536, guid: 92d0fe7b5ef2f8b4f85f068e9d3b78c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -87630,6 +88478,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Base_A Variant (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533558233676578091, guid: acc26a45dd26f874f9888644c2252af8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -88259,6 +89112,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Railing_Base_A Variant (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4133724668190966313, guid: 69a4729c7bc845648b642f5724c5898b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -89050,6 +89908,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Cross_A Variant (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4573597951997028536, guid: 92d0fe7b5ef2f8b4f85f068e9d3b78c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -89113,6 +89976,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Base_B Variant (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993231204131239039, guid: f6b1831420c626f42942e193b54c72ff,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -89425,6 +90293,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u0421eiling_Cross_B Variant (15)"
       objectReference: {fileID: 0}
+    - target: {fileID: 7418127062081630895, guid: e6cb355bbd4912e45a87157e0bb90fe3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -89617,6 +90490,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u0421eiling_Cross_A Variant (11)"
       objectReference: {fileID: 0}
+    - target: {fileID: 309133640282484093, guid: d6b57d82d11744c4a8739dd61a362717,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -89757,6 +90635,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Base_B (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1287568644966596, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 111
+      objectReference: {fileID: 0}
     - target: {fileID: 4424675242741290, guid: bb41edc076cff54469d54644e95cdb6c, type: 3}
       propertyPath: m_RootOrder
       value: 151
@@ -89868,6 +90754,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Base_A Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533558233676578091, guid: acc26a45dd26f874f9888644c2252af8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -90169,6 +91060,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1258231316}
     m_Modifications:
+    - target: {fileID: 1328576431220902, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4382669701431208, guid: 2537c7d7d5afba7419647ad69a7b25e4, type: 3}
       propertyPath: m_RootOrder
       value: 59
@@ -90364,6 +91259,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_Cross_B Variant (103)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872464674883700245, guid: 1dba476518f2d0244b34dc43589b7f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8878194077448804309, guid: 1dba476518f2d0244b34dc43589b7f91,
         type: 3}
