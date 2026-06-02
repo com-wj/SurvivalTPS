@@ -99,7 +99,7 @@ MonoBehaviour:
   _maxDistance: 30
   _magCapacity: 30
   _currentAmmo: 30
-  _totalAmmo: 300
+  _totalAmmo: 3000
   _reloadInterval: 2.5
   _reloadAnimLength: 6.433
   _muzzleFlash: {fileID: 8706572989398850072}

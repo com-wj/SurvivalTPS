@@ -205,6 +205,7 @@ public class EnemyAI : MonoBehaviour
 				Debug.Log($"[{name}] {target} 공격");
 			}
 		}
+		_enemyAnimator.SetMoveSpeedParam(0f);
 
 		// 후딜레이
 		float post = Mathf.Max(0f, _enemyBase.AttackActionDuration - _enemyBase.HitPredelay);
@@ -226,6 +227,8 @@ public class EnemyAI : MonoBehaviour
 			_enemyBase.IsDead ||
 			_navMeshAgent == null ||
 			_enemyAnimator == null) return;
+
+		if (_isAttacking) return;
 
 		// 속도 벡터(velocity) 길이 = 현재 이동 속도
 		float sqrMoveSpeed = _navMeshAgent.velocity.sqrMagnitude;

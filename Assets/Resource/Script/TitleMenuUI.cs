@@ -17,7 +17,7 @@ public class TitleMenuUI : MonoBehaviour
 	#endregion
 
 	#region 내부 변수
-	private bool _LoadingEnd = false;
+	//private bool _LoadingEnd = false;
 	#endregion
 
 	private void Awake()
@@ -55,12 +55,12 @@ public class TitleMenuUI : MonoBehaviour
 
 	void Update()
 	{
-		if (_LoadingEnd
+		//if (_LoadingEnd
 			//||			AudioManager.Instance.Mixer == null
-			)
-			return;
+			//)
+			//return;
 
-		_LoadingEnd = true;
+		//_LoadingEnd = true;
 		//AudioManager.Instance.PlayLoop("title");
 	}
 
@@ -90,7 +90,7 @@ public class TitleMenuUI : MonoBehaviour
 		}
 		else
 		{
-			Debug.LogWarning("TitleManager) 설정 창 null. 인스펙터 연결 확인");
+			Debug.LogWarning($"[{name}] 설정 창 null. 인스펙터 연결 확인");
 		}
 	}
 

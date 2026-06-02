@@ -6,9 +6,13 @@ public class WaveManager : Singleton<WaveManager>
 	#region 인스펙터
 	[Header("적 스포너")]
 	[SerializeField] private EnemySpawner _enemySpawner;
+	
+	[Header("현재 웨이브")]
+	[SerializeField] private int _waveIndex;
 
 	[Header("디버그")]
 	[SerializeField] private bool _printLog = false;
+	[SerializeField] private bool _debugMode = false;
 
 	[Header("의존성")]
 	[SerializeField] private PlayerBase _playerBase;
@@ -17,7 +21,6 @@ public class WaveManager : Singleton<WaveManager>
 	#region 내부 변수
 	private IReadOnlyList<WaveDataSO> _waveDatas;
 
-	private int _waveIndex;
 	private float _waveTimer;
 	private bool _isWaveRunning = false;
 	#endregion
@@ -111,6 +114,15 @@ public class WaveManager : Singleton<WaveManager>
 
 	private void Update()
 	{
+#if UNITY_EDITOR
+		if (_debugMode)
+		{
+			if (Input.GetKeyDown(KeyCode.F5))
+			{
+				SetToNextWave();
+			}
+		}
+#endif
 		if (!_isWaveRunning) return;
 
 		_waveTimer += Time.deltaTime;
@@ -143,5 +155,10 @@ public class WaveManager : Singleton<WaveManager>
 				}
 			}
 		}
+	}
+
+	public void SetWaveRunning(bool isRunning)
+	{
+		_isWaveRunning = isRunning;
 	}
 }

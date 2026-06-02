@@ -103,8 +103,8 @@ MonoBehaviour:
   _attackDamage: 7
   _attackInterval: 3
   _attackRange: 2.4
-  _attackActionDuration: 2.677
-  _hitPredelay: 0.7
+  _attackActionDuration: 2.367
+  _hitPredelay: 0.79
   _modelTr: {fileID: 4989044228293094792}
   _collider: {fileID: 2835086337325923353}
 --- !u!114 &2319239678831951348

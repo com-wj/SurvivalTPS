@@ -67,6 +67,11 @@ public class EnemyAnimator : MonoBehaviour
 		_animator.SetFloat(_hashMoveSpeed, sqrMoveSpeed, _speedDamp, Time.deltaTime);
 	}
 
+	public void SetMoveSpeedParam(float sqrMoveSpeed)
+	{
+		_animator.SetFloat(_hashMoveSpeed, sqrMoveSpeed);
+	}
+
 	public void OnAttack()
 	{
 		if (_hasAttackParam)

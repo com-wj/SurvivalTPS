@@ -51748,7 +51748,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dontDestroyOnLoad: 0
   _enemySpawner: {fileID: 370647949}
+  _waveIndex: 0
   _printLog: 1
+  _debugMode: 0
   _playerBase: {fileID: 2140684152}
 --- !u!4 &1226394443
 Transform:
@@ -79856,13 +79858,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dontDestroyOnLoad: 0
-  _targetKillCount: 10
   _enemySpawner: {fileID: 370647949}
   _roundDatas:
   - {fileID: 11400000, guid: 9a9e2bda2faba9440988081e5d2b5290, type: 2}
+  _roundIndex: 0
   _scoreManager: {fileID: 2116930889}
   _waveManager: {fileID: 1226394442}
   _printLog: 1
+  _debugMode: 1
 --- !u!4 &1883035891
 Transform:
   m_ObjectHideFlags: 0
@@ -85953,6 +85956,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6905093879600076579, guid: 1e2cc18f22d306743a070ab515602ee4,
+        type: 3}
+      propertyPath: _currentHp
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -90386,7 +90394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fab83a6a61881704888059654b4fb638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dontDestroyOnLoad: 0
+  _dontDestroyOnLoad: 1
   _printLog: 1
 --- !u!1001 &2117675307
 PrefabInstance:

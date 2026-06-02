@@ -97,14 +97,14 @@ MonoBehaviour:
   _printLog: 0
   _lifeTime: 6
   _timerAutoStart: 0
-  _maxHp: 8
+  _maxHp: 1
   _currentHp: 0
   _moveSpeed: 2.5
   _attackDamage: 4
   _attackInterval: 1.5
-  _attackRange: 1.4
+  _attackRange: 1.45
   _attackActionDuration: 0.8
-  _hitPredelay: 0.2
+  _hitPredelay: 0.1
   _modelTr: {fileID: 4989044228293094792}
   _collider: {fileID: 2835086337325923353}
 --- !u!114 &2319239678831951348

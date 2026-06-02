@@ -16,4 +16,28 @@ public class GameManager : Singleton<GameManager>
 			return;
 		}
 	}
+
+	private void OnEnable()
+	{
+		if (_playerBase != null)
+		{
+			_playerBase.Dead += OnPlayerDead;
+		}
+	}
+
+	private void OnDisable()
+	{
+		if (_playerBase != null)
+		{
+			_playerBase.Dead -= OnPlayerDead;
+		}
+	}
+
+	private void OnPlayerDead()
+	{
+		if (RoundManager.Instance != null)
+		{
+			RoundManager.Instance.OnRoundFail();
+		}
+	}
 }
