@@ -46,9 +46,9 @@ public class RoundManager : Singleton<RoundManager>
 			if (
 				_scoreManager == null
 				||
-			(_scoreManager != null &&
-			_scoreManager != ScoreManager.Instance)
-			) // Missing
+				(_scoreManager != null &&
+				_scoreManager != ScoreManager.Instance) // Missing
+			)
 			{
 				_scoreManager = ScoreManager.Instance;
 			}
@@ -79,8 +79,12 @@ public class RoundManager : Singleton<RoundManager>
 		{
 			_enemySpawner = EnemySpawner.Instance;
 		}
-		if (_scoreManager == null ||
+		if (
+			_scoreManager == null
+			||
+			(_scoreManager != null &&
 			_scoreManager != ScoreManager.Instance) // Missing
+			)
 		{
 			_scoreManager = ScoreManager.Instance;
 			_scoreManager.KillCountChanged += CheckClearCondition;

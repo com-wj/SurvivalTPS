@@ -16,9 +16,6 @@ public class EnemySpawner : Singleton<EnemySpawner>
 
 	[Header("활성화된 적")]
 	[SerializeField] private List<PooledObject> _aliveEnemyList = new List<PooledObject>();
-
-	[Header("의존성")]
-	[SerializeField] private PlayerBase _playerBase;
 	#endregion
 
 	#region 내부 변수
@@ -29,8 +26,7 @@ public class EnemySpawner : Singleton<EnemySpawner>
 	{
 		base.Awake();
 		if (_spawnPoints == null ||
-			_spawnPoints.Length == 0 ||
-			_playerBase == null)
+			_spawnPoints.Length == 0)
 		{
 			Debug.LogWarning($"[{name}] 인스펙터 null");
 			gameObject.SetActive(false);
@@ -39,24 +35,12 @@ public class EnemySpawner : Singleton<EnemySpawner>
 		_aliveEnemyList.Clear();
 	}
 
-	private void OnEnable()
-	{
-		if (_playerBase != null)
-		{
-			_playerBase.Dead += StopSpawn;
-		}
-	}
-
 	private void OnDisable()
 	{
 		if (_routine != null)
 		{
 			StopCoroutine(_routine);
 			_routine = null;
-		}
-		if (_playerBase != null)
-		{
-			_playerBase.Dead -= StopSpawn;
 		}
 	}
 
@@ -161,7 +145,7 @@ public class EnemySpawner : Singleton<EnemySpawner>
 		ClearEnemies();
 	}
 
-	private void StopSpawn()
+	public void StopSpawn()
 	{
 		if (_routine != null)
 		{

@@ -39,5 +39,13 @@ public class GameManager : Singleton<GameManager>
 		{
 			RoundManager.Instance.OnRoundFail();
 		}
+		if (WaveManager.Instance != null)
+		{
+			WaveManager.Instance.OnPlayerDead();
+		}
+		if (EnemySpawner.Instance != null)
+		{
+			EnemySpawner.Instance.StopSpawn();
+		}
 	}
 }

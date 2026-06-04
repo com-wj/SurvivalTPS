@@ -13,9 +13,6 @@ public class WaveManager : Singleton<WaveManager>
 	[Header("디버그")]
 	[SerializeField] private bool _printLog = false;
 	[SerializeField] private bool _debugMode = false;
-
-	[Header("의존성")]
-	[SerializeField] private PlayerBase _playerBase;
 	#endregion
 
 	#region 내부 변수
@@ -25,34 +22,7 @@ public class WaveManager : Singleton<WaveManager>
 	private bool _isWaveRunning = false;
 	#endregion
 
-	protected override void Awake()
-	{
-		base.Awake();
-		if (_playerBase == null)
-		{
-			Debug.LogWarning($"[{name}] 인스펙터 null");
-			gameObject.SetActive(false);
-			return;
-		}
-	}
-
-	private void OnEnable()
-	{
-		if (_playerBase != null)
-		{
-			_playerBase.Dead += OnPlayerDead;
-		}
-	}
-
-	private void OnDisable()
-	{
-		if (_playerBase != null)
-		{
-			_playerBase.Dead -= OnPlayerDead;
-		}
-	}
-
-	private void OnPlayerDead()
+	public void OnPlayerDead()
 	{
 		_isWaveRunning = false;
 	}
