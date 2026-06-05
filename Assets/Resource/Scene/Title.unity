@@ -1271,6 +1271,57 @@ MonoBehaviour:
   _settingButton: {fileID: 965587305}
   _exitButton: {fileID: 1965078622}
   _printLog: 0
+--- !u!1 &1451759332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1451759334}
+  - component: {fileID: 1451759333}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1451759333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451759332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e369079e9a4794a47aca1cba9c4f51ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dontDestroyOnLoad: 1
+  _bgmFiles: []
+  _bgmAudioSource: {fileID: 0}
+  _sfxFiles: []
+  _sfxAudioSource: {fileID: 0}
+  _audioMixer: {fileID: 0}
+  _printLog: 0
+--- !u!4 &1451759334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451759332}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1478897349
 GameObject:
   m_ObjectHideFlags: 0
@@ -1888,3 +1939,4 @@ SceneRoots:
   - {fileID: 997860499}
   - {fileID: 1526263253}
   - {fileID: 1946050619}
+  - {fileID: 1451759334}
