@@ -43,11 +43,10 @@ public class AudioManager : Singleton<AudioManager>
 	#region 내부 변수
 	private readonly Dictionary<string, AudioClip> _nameToClip = new Dictionary<string, AudioClip>();
 
-	private bool _LoadingEnd = false;
 	//private float _nextTowerSfxPlayTime = 0.0f;
 	#endregion
 
-	public AudioMixer Mixer => _audioMixer;
+	//public AudioMixer Mixer => _audioMixer;
 
 	protected override void Awake()
 	{
@@ -100,19 +99,6 @@ public class AudioManager : Singleton<AudioManager>
 		{
 			Debug.Log($"[{name}] 캐싱 완료.");
 		}
-	}
-
-	void Update()
-	{
-		if (_LoadingEnd ||
-			_audioMixer == null)
-			return;
-
-		_LoadingEnd = true; // Mixer 로드 시점에 적용
-
-		//SetVolume("MasterVolume", PlayerPrefs.GetFloat("MasterVolume", 0.1f));
-		//SetVolume("BGMVolume", PlayerPrefs.GetFloat("BGMVolume", 0.1f));
-		//SetVolume("SFXVolume", PlayerPrefs.GetFloat("SFXVolume", 0.1f));
 	}
 
 	private bool HaveAudio(string audioName)
@@ -174,7 +160,7 @@ public class AudioManager : Singleton<AudioManager>
 	}
 	*/
 
-	public void SetVolume(string audioName, float sliderValue)
+	public void SetVolume(string audioParam, float sliderValue)
 	{
 		float dB;
 		if (sliderValue > MUTE_THRESHOLD_VALUE)
@@ -188,8 +174,8 @@ public class AudioManager : Singleton<AudioManager>
 
 		if (_printLog)
 		{
-			Debug.Log($"[{name}] 볼륨 설정. {audioName} : {dB}");
+			Debug.Log($"[{name}] 볼륨 설정. {audioParam} : {dB}");
 		}
-		_audioMixer.SetFloat(audioName, dB);
+		_audioMixer.SetFloat(audioParam, dB);
 	}
 }

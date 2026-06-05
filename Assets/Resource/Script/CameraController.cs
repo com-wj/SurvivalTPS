@@ -49,6 +49,12 @@ public class CameraController : MonoBehaviour
 		_pitch = _startPitch;
 	}
 
+	private void Start()
+	{
+		SaveData data = DataManager.Load();
+		SetSensitivity(data.MouseSensitivity);
+	}
+
 	private void LateUpdate()
 	{
 		if (Cursor.lockState != CursorLockMode.Locked) return; // 일시 정지면 반환
@@ -75,5 +81,11 @@ public class CameraController : MonoBehaviour
 		}
 
 		transform.localRotation = Quaternion.Euler(_pitch, _yaw, 0);
+	}
+
+	public void SetSensitivity(float value)
+	{
+		float newSensitivity = value / 25f;
+		_sensitivity = Mathf.Max(0.01f, newSensitivity);
 	}
 }
