@@ -21,6 +21,9 @@ public class EnemyBase : LifeTimeObject, IDamageable
 
 	[Header("루트 캡슐 콜라이더")]
 	[SerializeField] protected CapsuleCollider _collider;
+
+	[Header("오디오 핸들러")]
+	[SerializeField] protected EnemyAudioHandler _enemyAudioHandler;
 	#endregion
 
 	#region 내부 변수
@@ -100,6 +103,11 @@ public class EnemyBase : LifeTimeObject, IDamageable
 		}
 
 		Dead?.Invoke();
+
+		if (_enemyAudioHandler != null)
+		{
+			_enemyAudioHandler.PlayDeathClipRandom();
+		}
 
 		StartPoolingTimer();
 	}

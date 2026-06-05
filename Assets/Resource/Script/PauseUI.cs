@@ -53,7 +53,10 @@ public class PauseUI : MonoBehaviour
 
 	private void OnPauseUIOpen()
 	{
-		//AudioManager.Instance.PlayOneShot("PuaseUIPop");
+		if (AudioManager.Instance != null)
+		{
+			AudioManager.Instance.PlayOneShot("UIPause");
+		}
 		Time.timeScale = 0.0f;
 
 		Cursor.visible = true;
@@ -64,7 +67,10 @@ public class PauseUI : MonoBehaviour
 
 	private void OnPauseUIClose()
 	{
-		//AudioManager.Instance.PlayOneShot("PauseUIClose");
+		if (AudioManager.Instance != null)
+		{
+			AudioManager.Instance.PlayOneShot("UIClose");
+		}
 		Time.timeScale = 1.0f;
 
 		Cursor.visible = false;
@@ -98,7 +104,6 @@ public class PauseUI : MonoBehaviour
 		{
 			Debug.Log($"[{name}] Resume 버튼 감지");
 		}
-		//AudioManager.Instance.PlayOneShot("UIButtonClick");
 		OnPauseUIClose();
 	}
 
@@ -117,16 +122,20 @@ public class PauseUI : MonoBehaviour
 		{
 			Debug.Log($"[{name}] GotoTitle 버튼 감지");
 		}
-		SceneFlowManager sceneFlowManager = SceneFlowManager.Instance;
+		
+		OnPauseUIClose();
+		if (AudioManager.Instance != null)
+		{
+			AudioManager.Instance.PlayOneShot("UIButtonClick");
+		}
 
+		SceneFlowManager sceneFlowManager = SceneFlowManager.Instance;
 		if (sceneFlowManager == null)
 		{
 			Debug.LogWarning($"[{name}] 씬 플로우 매니저 인스턴스 null");
 			return;
 		}
 
-		OnPauseUIClose();
-		//AudioManager.Instance.PlayOneShot("MoveSceneButtonClick");
 		if (SceneFlowManager.Instance != null)
 		{
 			sceneFlowManager.TryLoadScene(ESceneID.Title);

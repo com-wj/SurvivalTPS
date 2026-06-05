@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class ResultUI : MonoBehaviour
@@ -42,7 +43,7 @@ public class ResultUI : MonoBehaviour
 
 		SetResultValue();
 
-		//AudioManager.Instance.Stop();
+		AudioManager.Instance.Stop();
 		//AudioManager.Instance.PlayOneShotBGM("result");
 		Time.timeScale = 1.0f;
 
@@ -70,8 +71,31 @@ public class ResultUI : MonoBehaviour
 		_aliveText.text = score.IsSurvive ? _successMessage : _failMessage;
 
 		//_finalWaveValue.text = score.FinalWave.ToString();
-		_playTime.text = score.SurvivalTime.ToString("F2");
+		_playTime.text = GetTimeToString(score.SurvivalTime);
 		_killCount.text = score.TotalKillCount.ToString();
+	}
+
+	public string GetTimeToString(float time)
+	{
+		int hour = (int)time / 3600;
+		int min = (int)time / 60;
+		float sec = time % 60;
+
+		string strTime = "";
+		if (hour > 0)
+		{
+			strTime = $"{hour}:{min:D2}:{sec:00}";
+		}
+		else if (min > 0)
+		{
+			strTime = $"{min:D2}:{sec:00}";
+		}
+		else
+		{
+			strTime = $"{sec:00.00}";
+		}
+
+		return strTime;
 	}
 
 	public void OnClickRetryButton()
@@ -81,10 +105,15 @@ public class ResultUI : MonoBehaviour
 			Debug.Log($"[{name}] Retry 버튼 클릭 감지");
 		}
 
-		//AudioManager.Instance.PlayOneShot("MoveSceneButtonClick");
+		if (AudioManager.Instance != null)
+		{
+			AudioManager.Instance.PlayOneShot("UIButtonClick");
+		}
+
 		if (SceneFlowManager.Instance != null)
 		{
 			SceneFlowManager.Instance.TryLoadScene(ESceneID.Game);
+			HideCursor();
 		}
 	}
 
@@ -95,10 +124,21 @@ public class ResultUI : MonoBehaviour
 			Debug.Log($"[{name}] GoToTitle 버튼 클릭 감지");
 		}
 
-		//AudioManager.Instance.PlayOneShot("MoveSceneButtonClick");
+		if (AudioManager.Instance != null)
+		{
+			AudioManager.Instance.PlayOneShot("UIButtonClick");
+		}
+
 		if (SceneFlowManager.Instance != null)
 		{
 			SceneFlowManager.Instance.TryLoadScene(ESceneID.Title);
+			HideCursor();
 		}
+	}
+
+	private void HideCursor()
+	{
+		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Locked;
 	}
 }

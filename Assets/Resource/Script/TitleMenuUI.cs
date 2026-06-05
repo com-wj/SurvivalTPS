@@ -16,14 +16,10 @@ public class TitleMenuUI : MonoBehaviour
 	[SerializeField] private bool _printLog = false;
 	#endregion
 
-	#region 내부 변수
-	//private bool _LoadingEnd = false;
-	#endregion
-
 	private void Awake()
 	{
 		if (
-			//_settingPanel == null ||
+			_settingPanel == null ||
 			_startButton == null ||
 			_settingButton == null ||
 			_exitButton == null
@@ -53,24 +49,17 @@ public class TitleMenuUI : MonoBehaviour
 		_exitButton.onClick.RemoveListener(OnClickExitButton);
 	}
 
-	void Update()
-	{
-		//if (_LoadingEnd
-			//||			AudioManager.Instance.Mixer == null
-			//)
-			//return;
-
-		//_LoadingEnd = true;
-		//AudioManager.Instance.PlayLoop("title");
-	}
-
 	public void OnClickStartButton()
 	{
 		if (_printLog)
 		{
 			Debug.Log($"[{name}] Start 버튼 클릭 감지");
 		}
-		//AudioManager.Instance.PlayOneShot("MoveSceneButtonClick");
+
+		if (AudioManager.Instance != null)
+		{
+			AudioManager.Instance.PlayOneShot("UIButtonClick");
+		}
 
 		if (SceneFlowManager.Instance != null)
 		{

@@ -50,6 +50,11 @@ public class PlayerBase : MonoBehaviour, IDamageable
 	{
 		if (_isDead) return;
 
+		if (AudioManager.Instance != null)
+		{
+			AudioManager.Instance.PlayOneShot("PlayerHit");
+		}
+
 		_currentHp -= damage;
 		if (_printLog)
 		{

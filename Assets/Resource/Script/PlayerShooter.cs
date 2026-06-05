@@ -199,6 +199,11 @@ public class PlayerShooter : MonoBehaviour
 			Debug.LogWarning($"[{name}] 재장전 애니메이션 속도 이상. {AnimSpeedMultiplier}");
 		}
 		Reload?.Invoke(AnimSpeedMultiplier);
+
+		if (AudioManager.Instance != null)
+		{
+			AudioManager.Instance.PlayOneShot("Reload");
+		}
 	}
 
 	// UI 갱신

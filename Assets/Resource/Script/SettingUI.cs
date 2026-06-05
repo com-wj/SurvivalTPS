@@ -70,7 +70,10 @@ public class SettingUI : MonoBehaviour
 		_sfxVolumeSlider.value = _saveData.SFXVolume;
 		_mouseSensitivitySlider.value = _saveData.MouseSensitivity;
 
-		//AudioManager.Instance.PlayOneShot("PuaseUIPop");
+		if (AudioManager.Instance != null)
+		{
+			AudioManager.Instance.PlayOneShot("UIButtonClick");
+		}
 	}
 
 	void OnDisable()
@@ -87,7 +90,10 @@ public class SettingUI : MonoBehaviour
 		_sfxVolumeSlider.onValueChanged.RemoveListener(OnChangeSFXSliderValue);
 		_mouseSensitivitySlider.onValueChanged.RemoveListener(OnChangeMouseSensitivitySliderValue);
 
-		//AudioManager.Instance.PlayOneShot("PauseUIClose");
+		if (AudioManager.Instance != null)
+		{
+			AudioManager.Instance.PlayOneShot("UIClose");
+		}
 	}
 
 	void Update()

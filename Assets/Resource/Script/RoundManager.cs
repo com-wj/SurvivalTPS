@@ -73,6 +73,7 @@ public class RoundManager : Singleton<RoundManager>
 			_routine = null;
 		}
 	}
+
 	private void Start()
 	{
 		if (_enemySpawner == null)
@@ -108,6 +109,7 @@ public class RoundManager : Singleton<RoundManager>
 			if (Input.GetKeyDown(KeyCode.F6))
 			{
 				Debug.Log($"[{name}] 라운드 클리어");
+				_roundIndex = _roundDatas.Count - 1;
 				OnRoundClear();
 			}
 		}
@@ -134,6 +136,11 @@ public class RoundManager : Singleton<RoundManager>
 		{
 			Debug.Log($"[{name}] 라운드 클리어.");
 		}
+		if (AudioManager.Instance != null)
+		{
+			AudioManager.Instance.Stop();
+			AudioManager.Instance.PlayOneShot("RoundClear");
+		}
 
 		_waveManager.SetWaveRunning(false);
 		_scoreManager.StopTimer();
@@ -142,6 +149,11 @@ public class RoundManager : Singleton<RoundManager>
 
 		_roundIndex++;
 		bool isFinalRound = (_roundIndex == _roundDatas.Count);
+
+		if (isFinalRound)
+		{
+			_scoreManager.SetSurvive(true);
+		}
 
 		if (_routine != null)
 		{
@@ -156,6 +168,11 @@ public class RoundManager : Singleton<RoundManager>
 		if (_printLog)
 		{
 			Debug.Log($"[{name}] 라운드 실패.");
+		}
+		if (AudioManager.Instance != null)
+		{
+			AudioManager.Instance.Stop();
+			AudioManager.Instance.PlayOneShot("RoundFail");
 		}
 
 		_waveManager.SetWaveRunning(false);

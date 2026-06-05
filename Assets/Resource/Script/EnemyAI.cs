@@ -20,6 +20,9 @@ public class EnemyAI : MonoBehaviour
 	[Header("공격 종류")]
 	[SerializeField] private EDamageType _damageType;
 
+	[Header("오디오 핸들러")]
+	[SerializeField] protected EnemyAudioHandler _enemyAudioHandler;
+
 	[Header("디버그")]
 	[SerializeField] private bool _printLog = false;
 	#endregion
@@ -191,6 +194,12 @@ public class EnemyAI : MonoBehaviour
 			_isAttacking = false;
 			_routine = null;
 			yield break;
+		}
+
+		if (damageType == EDamageType.Push &&
+			_enemyAudioHandler != null)
+		{
+			_enemyAudioHandler.PlayAttackClip();
 		}
 
 		if (Vector3.SqrMagnitude(_toTarget) <= _sqrAttackRange)

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Rendering;
 
 public class AudioManager : Singleton<AudioManager>
 {
@@ -10,6 +11,9 @@ public class AudioManager : Singleton<AudioManager>
 	{
 		public string soundName;
 		public AudioClip clip;
+
+		[Range(0f, 1f)]
+		public float volume = 1f;
 	}
 
 	#region 인스펙터
@@ -23,13 +27,6 @@ public class AudioManager : Singleton<AudioManager>
 	[Header("SFX Audio Source")]
 	[SerializeField] private AudioSource _sfxAudioSource;
 
-	/*
-	[Header("타워 SFX Audio Source")]
-	[SerializeField] private AudioSource _towerSfxAudioSource;
-	[Header("타워 SFX 재생 간격")]
-	[SerializeField] private float _towerSfxCooldown = 0.1f;
-	*/
-
 	[Header("오디오 믹서")]
 	[SerializeField] private AudioMixer _audioMixer;
 
@@ -41,12 +38,10 @@ public class AudioManager : Singleton<AudioManager>
 	#endregion
 
 	#region 내부 변수
-	private readonly Dictionary<string, AudioClip> _nameToClip = new Dictionary<string, AudioClip>();
-
-	//private float _nextTowerSfxPlayTime = 0.0f;
+	private readonly Dictionary<string, SoundFile> _nameToSound = new Dictionary<string, SoundFile>();
 	#endregion
 
-	//public AudioMixer Mixer => _audioMixer;
+	public AudioMixer Mixer => _audioMixer;
 
 	protected override void Awake()
 	{
@@ -57,8 +52,6 @@ public class AudioManager : Singleton<AudioManager>
 			_sfxFiles == null ||
 			_sfxFiles.Length == 0 ||
 			_sfxAudioSource == null
-			//||
-			//_towerSfxAudioSource == null
 			)
 		{
 			Debug.LogWarning($"[{name}] 인스펙터 null.");
@@ -73,26 +66,26 @@ public class AudioManager : Singleton<AudioManager>
 	{
 		for (int i = 0; i < _bgmFiles.Length; i++)
 		{
-			string fileName = _bgmFiles[i].soundName;
-			AudioClip clip = _bgmFiles[i].clip;
+			SoundFile file = _bgmFiles[i];
+			string fileName = file.soundName;
 
 			if (string.IsNullOrEmpty(fileName) ||
-				clip == null)
+				file.clip == null)
 				continue;
 
-			_nameToClip[fileName] = clip;
+			_nameToSound[fileName] = file;
 		}
 
 		for (int i = 0; i < _sfxFiles.Length; i++)
 		{
-			string fileName = _sfxFiles[i].soundName;
-			AudioClip clip = _sfxFiles[i].clip;
+			SoundFile file = _sfxFiles[i];
+			string fileName = file.soundName;
 
 			if (string.IsNullOrEmpty(fileName) ||
-				clip == null)
+				file.clip == null)
 				continue;
 
-			_nameToClip[fileName] = clip;
+			_nameToSound[fileName] = file;
 		}
 
 		if (_printLog)
@@ -103,7 +96,7 @@ public class AudioManager : Singleton<AudioManager>
 
 	private bool HaveAudio(string audioName)
 	{
-		if (!_nameToClip.ContainsKey(audioName))
+		if (!_nameToSound.ContainsKey(audioName))
 		{
 			Debug.LogWarning($"[{name}] [{audioName}] 사운드 파일이 없습니다.");
 			return false;
@@ -117,7 +110,7 @@ public class AudioManager : Singleton<AudioManager>
 		if (!HaveAudio(audioName))
 			return;
 
-		_bgmAudioSource.clip = _nameToClip[audioName];
+		_bgmAudioSource.clip = _nameToSound[audioName].clip;
 		_bgmAudioSource.Play();
 	}
 
@@ -126,7 +119,8 @@ public class AudioManager : Singleton<AudioManager>
 		if (!HaveAudio(audioName))
 			return;
 
-		_bgmAudioSource.PlayOneShot(_nameToClip[audioName]);
+		SoundFile file = _nameToSound[audioName];
+		_bgmAudioSource.PlayOneShot(file.clip, file.volume);
 	}
 
 	public void Stop()
@@ -139,26 +133,32 @@ public class AudioManager : Singleton<AudioManager>
 		if (!HaveAudio(audioName))
 			return;
 
-		_sfxAudioSource.PlayOneShot(_nameToClip[audioName]);
+		SoundFile file = _nameToSound[audioName];
+		_sfxAudioSource.PlayOneShot(file.clip, file.volume);
 	}
 
-	/*
-	public void PlayOneShotTower(string audioName)
+	/// <summary>
+	/// 오버로딩 : 외부에서 직접 오디오 클립 재생
+	/// </summary>
+	public void PlayOneShot(AudioClip clip, float volume = 1f)
 	{
-		if (!HaveAudio(audioName))
-			return;
-
-		if (Time.time < _nextTowerSfxPlayTime)
-			return;
-
-		_nextTowerSfxPlayTime = Time.time + _towerSfxCooldown;
-
-		_towerSfxAudioSource.pitch += UnityEngine.Random.Range(-0.05f, 0.05f);
-		_towerSfxAudioSource.PlayOneShot(_nameToClip[audioName]);
-
-		_towerSfxAudioSource.pitch = 1.0f;
+		_sfxAudioSource.PlayOneShot(clip, volume);
 	}
-	*/
+
+	/// <summary>
+	/// clip 목록에서 랜덤으로 재생시킴.
+	/// </summary>
+	public void PlayOneShotRandom(AudioClip[] clips, float volume = 1f, float minPitch = 1f, float maxPitch = 1f)
+	{
+		if (clips == null || clips.Length == 0) return;
+
+		_sfxAudioSource.pitch = UnityEngine.Random.Range(minPitch, maxPitch);
+
+		int index = UnityEngine.Random.Range(0, clips.Length);
+		_sfxAudioSource.PlayOneShot(clips[index], volume);
+
+		_sfxAudioSource.pitch = 1.0f;
+	}
 
 	public void SetVolume(string audioParam, float sliderValue)
 	{

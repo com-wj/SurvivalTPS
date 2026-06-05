@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2319239678831951348}
   - component: {fileID: 9042740942058499583}
   - component: {fileID: 2970584652184815747}
+  - component: {fileID: -7867002122355581637}
   m_Layer: 7
   m_Name: Enemy_Mutant4
   m_TagString: Untagged
@@ -108,6 +109,7 @@ MonoBehaviour:
   _hitPredelay: 0.79
   _modelTr: {fileID: 4989044228293094792}
   _collider: {fileID: 2835086337325923353}
+  _enemyAudioHandler: {fileID: -7867002122355581637}
 --- !u!114 &2319239678831951348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,6 +129,7 @@ MonoBehaviour:
   _targetTr: {fileID: 0}
   _rotateSharpness: 8
   _damageType: 1
+  _enemyAudioHandler: {fileID: -7867002122355581637}
   _printLog: 0
 --- !u!114 &9042740942058499583
 MonoBehaviour:
@@ -159,6 +162,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyBase: {fileID: 6449101514488936828}
+--- !u!114 &-7867002122355581637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496943761725950960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f244bc4b956477438984766438cbb9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackClip: {fileID: 8300000, guid: c46d16e1c782dab4e9198adf5ed82bf7, type: 3}
+  _deathClips:
+  - {fileID: 8300000, guid: d1f657ef3fc44a548bba06287519e835, type: 3}
+  - {fileID: 8300000, guid: 00a7e651a73d972459c79bc28579014a, type: 3}
+  - {fileID: 8300000, guid: 6210c85299ac1dc41a61da23242935d5, type: 3}
+  - {fileID: 8300000, guid: d5c4a71cc405f5e4ca22ca52ef6b092a, type: 3}
+  - {fileID: 8300000, guid: 2c09c0de33612d1418f0ecee71fdfa34, type: 3}
 --- !u!1001 &4807060677407672931
 PrefabInstance:
   m_ObjectHideFlags: 0

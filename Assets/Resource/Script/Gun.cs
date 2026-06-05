@@ -112,9 +112,14 @@ public class Gun : MonoBehaviour
 		}
 
 		// 총구 화염
-		if (_muzzleFlash == null) return;
-
-		_muzzleFlash.Play();
+		if (_muzzleFlash != null)
+		{
+			_muzzleFlash.Play();
+		}
+		if (AudioManager.Instance != null)
+		{
+			AudioManager.Instance.PlayOneShot("FireAR");
+		}
 	}
 
 	// 애니메이션 재생 속도 반환

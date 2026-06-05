@@ -17,6 +17,15 @@ public class GameManager : Singleton<GameManager>
 		}
 	}
 
+	private void Start()
+	{
+		if (AudioManager.Instance != null)
+		{
+			//AudioManager.Instance.Stop();
+			AudioManager.Instance.PlayLoop("Game");
+		}
+	}
+
 	private void OnEnable()
 	{
 		if (_playerBase != null)
