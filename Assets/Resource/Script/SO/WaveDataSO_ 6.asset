@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WaveDataSO_ 6
   m_EditorClassIdentifier: 
   _name: 
-  _duration: 40
+  _duration: 10
   _prefab: {fileID: 6449101514488936828, guid: 8fcabdb4f6502564a841008c79d141aa, type: 3}
   _unitCountPerSpawn: 5
   _spawnInterval: 5
